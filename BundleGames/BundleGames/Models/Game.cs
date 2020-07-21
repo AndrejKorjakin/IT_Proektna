@@ -11,14 +11,18 @@ namespace BundleGames.Models
         
         [Key]
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string GameName { get; set; }
         public string GameImage { get; set; }
         public string GameInfo { get; set; }
         public string Publisher { get; set; }
         public string Developer { get; set; }
 
+        public List<string> Tags { get; set; }
 
-
+        public Game()
+        {
+            Tags = new List<string>();
+        }
 
 
     }

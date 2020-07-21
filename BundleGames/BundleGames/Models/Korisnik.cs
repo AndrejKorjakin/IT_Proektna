@@ -10,7 +10,7 @@ namespace BundleGames.Models
     {
         public int Id { get; set; }
         [Required]
-        public string Name { get; set; }
+        public string KorisnikName { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string Image { get; set; }
