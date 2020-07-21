@@ -15,6 +15,8 @@ namespace BundleGames.Models
         public string GameImage { get; set; }
         public float GameCena { get; set; }
         public string GameInfo { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime ReleaseDate { get; set; }
         public string Publisher { get; set; }
         public string Developer { get; set; }
 
