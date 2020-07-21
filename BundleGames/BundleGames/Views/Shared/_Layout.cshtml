@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Bandle Games</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+<style>
+    .pozadina {
+        background-color: #465560;
+    }
+    
+</style>
+
+</head>
+<body class="pozadina">
+    
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                    <div class="ml-5">
+                        <a href="https://localhost:44339/"><img class="ml-5" src="~/Logo/BundleGamesLogo.png" /></a>
+                    </div>
+                    
+                    @* NAV BAR*@
+                <div class="collapse navbar-collapse ml-5">
+                    <ul  class="navbar-nav mr-auto ml-5">
+                        <li  class="nav-item active">
+                            @Html.ActionLink("STORE", "Index", "Home", new { @class = "btn text-info border-right border-left" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("POPULAR GAMES", "Index", "Home", new { @class = " btn text-info  border-right" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("PROFILE", "Index", "Home", new { @class = " btn text-info  border-right" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("CONTACT", "Index", "Home", new { @class = " btn text-info border-right" })
+                        </li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                    
+    @*SEARCH ( FOR LATER )
+            <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search Games..." aria-label="Search">
+            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+        </form>
+                    *@
+
+                </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container body-content">
+        @RenderBody()
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    
+    @section scripts{
+        
+        
+
+        }
+</body>
+
+</html>
