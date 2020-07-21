@@ -13,6 +13,7 @@ namespace BundleGames.Models
         public int Id { get; set; }
         public string GameName { get; set; }
         public string GameImage { get; set; }
+        public float GameCena { get; set; }
         public string GameInfo { get; set; }
         public string Publisher { get; set; }
         public string Developer { get; set; }

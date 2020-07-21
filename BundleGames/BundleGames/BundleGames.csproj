@@ -195,6 +195,10 @@
     <Compile Include="Migrations\202007212113236_tagsadded.Designer.cs">
       <DependentUpon>202007212113236_tagsadded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007212124417_gamecenaadded.cs" />
+    <Compile Include="Migrations\202007212124417_gamecenaadded.Designer.cs">
+      <DependentUpon>202007212124417_gamecenaadded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -633,6 +637,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007212113236_tagsadded.resx">
       <DependentUpon>202007212113236_tagsadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007212124417_gamecenaadded.resx">
+      <DependentUpon>202007212124417_gamecenaadded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
