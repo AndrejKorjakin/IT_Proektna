@@ -15,6 +15,7 @@ namespace BundleGames.Models
         [Display(Name ="Name")]
         public string Game_Name { get; set; }
         [Required]
+        [Display(Name ="Preview")]
         public string Game_Image { get; set; }
         [Required]
         [Display(Name = "Price")]

@@ -1,0 +1,80 @@
+﻿@model BundleGames.Models.Game
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Game</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Game_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Game_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Game_Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Game_Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Game_Cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Game_Cena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Game_Info)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Game_Info)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Release_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Release_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Publisher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Publisher)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Developer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Developer)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

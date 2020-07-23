@@ -29,5 +29,11 @@ namespace BundleGames.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<BundleGames.Models.Korisnik> Korisniks { get; set; }
+
+        public System.Data.Entity.DbSet<BundleGames.Models.Game> Games { get; set; }
+
+        public System.Data.Entity.DbSet<BundleGames.Models.Wishlist> Wishlists { get; set; }
     }
 }

@@ -1,0 +1,88 @@
+﻿@model BundleGames.Models.Game
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<div class="contrainer">
+    <div class="row">
+        <div class="col">
+            <div class="col">
+
+                <div class="card mt-5">
+                    
+                    <div class="card-body bg-light">
+                        <h5 class="card-title text-dark">@Html.DisplayFor(model => model.Game_Name)</h5>
+                        <img src="@Html.DisplayFor(model=>model.Game_Image)" class="card-img-bottom">
+                        <div class="border mt-1">
+                            <h5 class="text-warning mt-3">Description:</h5>
+                            <p class="card-text">@Html.DisplayFor(model => model.Game_Info)</p>
+                        </div>
+                        <div class="border mt-2">
+                            <h5 class="text-warning mt-3">
+                                Price: @if (Model.Game_Cena == 0)
+                                {
+                                    <label class="card-text text-dark">
+                                        Free
+                                    </label>
+                                }
+                                else
+                                {
+                                    <label class="card-text text-dark">@Html.DisplayFor(model => model.Game_Cena)</label>
+                                }
+                            </h5>
+                        </div>
+                        <div class="border mt-1">
+                            <h5 class="text-warning mt-3">Developer:</h5>
+                            <p class="card-text font-weight-bold ml-2">@Html.DisplayFor(model => model.Developer)</p>
+                        </div>
+                        <div class="border mt-1">
+                            <h5 class="text-warning mt-3">Developer:</h5>
+                            <p class="card-text font-weight-bold ml-2">@Html.DisplayFor(model => model.Publisher)</p>
+                        </div>
+                        <div class="border mt-1">
+                            <h5 class="text-warning mt-3">Release Date:</h5>
+                            <p class="card-text font-weight-bold ml-2">@Html.DisplayFor(model => model.Release_Date)</p>
+                        </div>
+                        <a href="#" class="btn btn-success mt-5">Add To Card <span class="fa fa-long-arrow-alt-right"></span></a>
+                        <a href="#" class="btn btn-primary mt-5">Add To Wishlist <span class="fa fa-long-arrow-alt-right"></span></a>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <p>
+                            <h4>System Requirements</h4>
+                        </p>
+                        <label class="text-info font-weight-bold">MINIMUM</label>:
+                        <p class="border">
+                            <b><label class="text-danger">OS</label></b>: Windows 7/8.1/10 (64-bit versions)<br />
+                            <b><label class="text-danger">Processor</label></b>: Intel Core i5-6600k 3.5 GHz /AMD Ryzen 3 1300X 3.5 GHz or equivalent
+                            <br />
+                            <b><label class="text-danger">Memory</label></b>: 8 GB RAM
+                            <br />
+                            <b><label class="text-danger">Graphics</label></b>: NVIDIA GTX 780 3GB /AMD Radeon R9 285 2GB or equivalent
+                            <br />
+                            <b><label class="text-danger">Network</label></b>: Broadband Internet connection
+                            <br />
+                            <b><label class="text-danger">Storage</label></b>: 80 GB available space
+                        </p>      
+                            
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col mt-4 ml-3">
+        <p>
+            <span class="btn bg-dark btn-outline-success">@Html.ActionLink("Edit", "Edit", new { id = Model.Id })</span>
+            |
+            <span class="btn bg-dark btn-outline-warning">@Html.ActionLink("Back to List", "Index")</span>
+
+        </p>
+    </div>
+</div>
+

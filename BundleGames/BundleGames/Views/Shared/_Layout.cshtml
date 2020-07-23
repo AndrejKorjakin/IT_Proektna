@@ -29,16 +29,16 @@
                 <div class="collapse navbar-collapse ml-5">
                     <ul  class="navbar-nav mr-auto ml-5">
                         <li  class="nav-item active">
-                            @Html.ActionLink("STORE", "Index", "Home", new { @class = "btn text-info border-right border-left" })
+                            @Html.ActionLink("STORE", "Index", "Games", null, new { @class = " btn text-info  border-right" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("POPULAR GAMES", "Index", "Home", new { @class = " btn text-info  border-right" })
+                            @Html.ActionLink("WEEKLY SPECIAL", "Index", "Home", null, new { @class = " btn text-info  border-right" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("PROFILE", "Index", "Home", new { @class = " btn text-info  border-right" })
+                            @Html.ActionLink("PROFILE", "Index", "Korisniks", null, new { @class = " btn text-info  border-right" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("CONTACT", "Index", "Home", new { @class = " btn text-info border-right" })
+                            @Html.ActionLink("CONTACT", "Index", "Home", null, new { @class = " btn text-info border-right" })
                         </li>
                     </ul>
                     @Html.Partial("_LoginPartial")
