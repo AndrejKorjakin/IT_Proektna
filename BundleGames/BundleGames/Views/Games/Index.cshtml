@@ -1,101 +1,62 @@
 ﻿@model IEnumerable<BundleGames.Models.Game>
-
 @{
     ViewBag.Title = "Index";
 }
 <head>
-    <script>
-        
-    </script>
+    <style>
+        .pozadina-index {
+            background: #243f51;
+        }
+    </style>
 </head>
 <h2>Index</h2>
+@foreach (var item in Model)
+{
+    <div class="card mt-5 pozadina-index">
+        <div class="row no-gutters mt-5">
+            <div class="col-2">
 
+                <img class="ml-1" style="height:120px;width:180px;" src="@Html.DisplayFor(modelItem => item.Game_Image)" />
+                
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table text-white js-delete" id="tabela">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Game_Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Game_Image)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Game_Cena)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Game_Info)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Release_Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Publisher)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Developer)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.ActionLink(item.Game_Name, "Details", new { id = item.Id })
-                </td>
-                <td>
-                    <img style="height:100px;width:150px;" src="@Html.DisplayFor(modelItem => item.Game_Image)" />
-                </td>
-                <td>
+            </div>
+            <div class="col">
+                <div class="card-block px-2">
+                    <h4 class="card-title ">@Html.ActionLink(item.Game_Name, "Details", new { id = item.Id }, new { @class = "text-warning" })</h4>
+
                     @if (item.Game_Cena == 0)
                     {
-                        <label>Free</label>
+                        <h5 class="card-text text-info font-weight-bold">Free To Play</h5>
                     }
                     else
                     {
-                        <label>@Html.DisplayFor(modelItem => item.Game_Cena)$</label>
+                        <h5 class="card-text text-info font-weight-bold">@item.Game_Cena$</h5>
                     }
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Game_Info)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Release_Date)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Publisher)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Developer)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>
-            </tr>
+
+                    <a href="#" class="btn btn-success mt-2">Add To Card</a>
+                    <a class="btn btn-warning mt-2">Add To Wishlist</a>
+                    @*
+           @if (User.IsInRole("Administrator"))
+        {
+            <a>@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning mt-2" })</a>
+            <a>@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger mt-2" })</a>
         }
-    </tbody>
-</table>
+                    *@
 
-@section scripts {
-    
-    <script>
-        $(document).ready(function () {
-            $("#tabela").dataTable();
-        })
-        $("#tabela .js-delete").click(function () {
-            bootbox.confirm("dali ste sigurni?", function (result) {
-                if (result) {
+                    
+                        <a>@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-info mt-2" })</a>
+                        <a>@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger mt-2" })</a>
+                    
 
-                }
-            })
-        })
-    </script>
-    
-    }
+                </div>
+            </div>
+
+            <div class="card-footer w-100 text-muted bg-dark mt-3">
+                <label>TAGS: ????????????????????????</label>
+            </div>
+        </div>
+    </div>
+}
+
+
+

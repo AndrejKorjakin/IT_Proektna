@@ -222,6 +222,14 @@
     <Compile Include="Migrations\202007231439377_addedcontactpage.Designer.cs">
       <DependentUpon>202007231439377_addedcontactpage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007231556375_frontpageupdated.cs" />
+    <Compile Include="Migrations\202007231556375_frontpageupdated.Designer.cs">
+      <DependentUpon>202007231556375_frontpageupdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007231603228_editpagefixed.cs" />
+    <Compile Include="Migrations\202007231603228_editpagefixed.Designer.cs">
+      <DependentUpon>202007231603228_editpagefixed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -694,6 +702,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007231439377_addedcontactpage.resx">
       <DependentUpon>202007231439377_addedcontactpage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007231556375_frontpageupdated.resx">
+      <DependentUpon>202007231556375_frontpageupdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007231603228_editpagefixed.resx">
+      <DependentUpon>202007231603228_editpagefixed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
