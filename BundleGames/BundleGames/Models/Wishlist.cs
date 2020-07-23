@@ -8,12 +8,12 @@ namespace BundleGames.Models
     public class Wishlist
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public List<Game> Wishlist_list { get; set; }
+        public string Wishlist_Name { get; set; }
+        public List<Game> Wishlist_Games { get; set; }
 
         public Wishlist()
         {
-            Wishlist_list = new List<Game>();
+            Wishlist_Games = new List<Game>();
         }
     }
 }

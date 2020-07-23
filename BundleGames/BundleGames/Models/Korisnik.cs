@@ -10,18 +10,21 @@ namespace BundleGames.Models
     {
         public int Id { get; set; }
         [Required]
-        public string KorisnikName { get; set; }
+        [Display(Name ="Име")]
+        public string Korisnik_Name { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string Image { get; set; }
-        [Range(5,99)]
+        [Range(10,99)]
         public int Age { get; set; }
+        public List<Game> Korisnik_Games { get; set; }
 
-        public List<Game> Korisnik_wishlist { get; set; }
+        public Wishlist Korisnik_Wishlist { get; set; }
 
         public Korisnik()
         {
-            Korisnik_wishlist = new List<Game>();
+            
+            Korisnik_Games = new List<Game>();
         }
     }
 }

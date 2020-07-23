@@ -203,6 +203,10 @@
     <Compile Include="Migrations\202007212135343_releasedateadded.Designer.cs">
       <DependentUpon>202007212135343_releasedateadded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007230913214_changedandaddedinmodels.cs" />
+    <Compile Include="Migrations\202007230913214_changedandaddedinmodels.Designer.cs">
+      <DependentUpon>202007230913214_changedandaddedinmodels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -647,6 +651,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007212135343_releasedateadded.resx">
       <DependentUpon>202007212135343_releasedateadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007230913214_changedandaddedinmodels.resx">
+      <DependentUpon>202007230913214_changedandaddedinmodels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
