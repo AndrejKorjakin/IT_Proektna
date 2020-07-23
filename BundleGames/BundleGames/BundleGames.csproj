@@ -218,6 +218,10 @@
     <Compile Include="Migrations\202007231059580_addedsomething1.Designer.cs">
       <DependentUpon>202007231059580_addedsomething1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007231439377_addedcontactpage.cs" />
+    <Compile Include="Migrations\202007231439377_addedcontactpage.Designer.cs">
+      <DependentUpon>202007231439377_addedcontactpage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -643,6 +647,7 @@
     <Content Include="Views\Wishlists\Details.cshtml" />
     <Content Include="Views\Wishlists\Edit.cshtml" />
     <Content Include="Views\Wishlists\Index.cshtml" />
+    <Content Include="Views\Shared\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -686,6 +691,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007231059580_addedsomething1.resx">
       <DependentUpon>202007231059580_addedsomething1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007231439377_addedcontactpage.resx">
+      <DependentUpon>202007231439377_addedcontactpage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

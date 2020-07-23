@@ -14,7 +14,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table text-white" id="tabela">
+<table class="table text-white js-delete" id="tabela">
     <thead>
         <tr>
             <th>
@@ -89,6 +89,13 @@
         $(document).ready(function () {
             $("#tabela").dataTable();
         })
-    </script>
+        $("#tabela .js-delete").click(function () {
+            bootbox.confirm("dali ste sigurni?", function (result) {
+                if (result) {
 
+                }
+            })
+        })
+    </script>
+    
     }
