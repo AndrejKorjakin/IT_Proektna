@@ -174,6 +174,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KorisniksController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PopustGamesController.cs" />
     <Compile Include="Controllers\WishlistsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -230,12 +231,25 @@
     <Compile Include="Migrations\202007231603228_editpagefixed.Designer.cs">
       <DependentUpon>202007231603228_editpagefixed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007241553298_addedbootbox.cs" />
+    <Compile Include="Migrations\202007241553298_addedbootbox.Designer.cs">
+      <DependentUpon>202007241553298_addedbootbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007241627235_popustgamesadded.cs" />
+    <Compile Include="Migrations\202007241627235_popustgamesadded.Designer.cs">
+      <DependentUpon>202007241627235_popustgamesadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007241628278_popustgamesaddedfinal.cs" />
+    <Compile Include="Migrations\202007241628278_popustgamesaddedfinal.Designer.cs">
+      <DependentUpon>202007241628278_popustgamesaddedfinal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Korisnik.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\PopustGames.cs" />
     <Compile Include="Models\Store.cs" />
     <Compile Include="Models\Wishlist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -656,6 +670,11 @@
     <Content Include="Views\Wishlists\Edit.cshtml" />
     <Content Include="Views\Wishlists\Index.cshtml" />
     <Content Include="Views\Shared\View.cshtml" />
+    <Content Include="Views\PopustGames\Create.cshtml" />
+    <Content Include="Views\PopustGames\Delete.cshtml" />
+    <Content Include="Views\PopustGames\Details.cshtml" />
+    <Content Include="Views\PopustGames\Edit.cshtml" />
+    <Content Include="Views\PopustGames\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -708,6 +727,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007231603228_editpagefixed.resx">
       <DependentUpon>202007231603228_editpagefixed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007241553298_addedbootbox.resx">
+      <DependentUpon>202007241553298_addedbootbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007241627235_popustgamesadded.resx">
+      <DependentUpon>202007241627235_popustgamesadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007241628278_popustgamesaddedfinal.resx">
+      <DependentUpon>202007241628278_popustgamesaddedfinal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

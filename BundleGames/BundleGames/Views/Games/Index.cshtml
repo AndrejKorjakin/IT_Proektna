@@ -45,7 +45,7 @@
 
                     
                         <a>@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-info mt-2" })</a>
-                        <a>@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger mt-2" })</a>
+                        <a class="btn btn-link btn-danger js-delete mt-2" data-id="@item.Id">Delete</a>
                     
 
                 </div>
@@ -59,4 +59,22 @@
 }
 
 
+@section scripts {
+    <script>
+        $(".js-delete").click(function () {
+            var button = $(this);
 
+            bootbox.confirm("Are you sure?", function (result) {
+                if (result) {
+                    $.ajax({
+                        method: "GET",
+                        url: "/Games/Delete/"+button.attr("data-id"),
+                        success: function () {
+                            table.row(button.parents("tr").remove().draw());
+                        }
+                    })
+                }
+            })
+        })
+    </script>
+    }

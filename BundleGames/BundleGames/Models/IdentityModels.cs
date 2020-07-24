@@ -35,5 +35,7 @@ namespace BundleGames.Models
         public System.Data.Entity.DbSet<BundleGames.Models.Game> Games { get; set; }
 
         public System.Data.Entity.DbSet<BundleGames.Models.Wishlist> Wishlists { get; set; }
+
+        public System.Data.Entity.DbSet<BundleGames.Models.PopustGames> PopustGames { get; set; }
     }
 }

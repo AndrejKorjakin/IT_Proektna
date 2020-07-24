@@ -120,3 +120,6 @@ F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\Bundl
 F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.addedcontactpage.resources
 F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.frontpageupdated.resources
 F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.editpagefixed.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.addedbootbox.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.popustgamesadded.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.popustgamesaddedfinal.resources

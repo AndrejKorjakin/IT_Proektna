@@ -92,21 +92,15 @@ namespace BundleGames.Controllers
         // GET: Games/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Game game = db.Games.Find(id);
-            if (game == null)
-            {
-                return HttpNotFound();
-            }
-            return View(game);
+
+            Game listing = db.Games.Find(id);
+            db.Games.Remove(listing);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
         }
 
-        // POST: Games/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        
         public ActionResult DeleteConfirmed(int id)
         {
             Game game = db.Games.Find(id);
