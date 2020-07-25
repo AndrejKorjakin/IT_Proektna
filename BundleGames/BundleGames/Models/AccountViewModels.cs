@@ -49,9 +49,8 @@ namespace BundleGames.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Username")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -79,6 +78,15 @@ namespace BundleGames.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        
+        [Display(Name = "UserName")]
+        public string UserName { get; set; }
+        [Required]
+        
+        [Display(Name = "Full Name  ")]
+        public string FullName { get; set; }
     }
 
     public class ResetPasswordViewModel

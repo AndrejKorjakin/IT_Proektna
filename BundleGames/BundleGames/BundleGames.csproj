@@ -243,6 +243,18 @@
     <Compile Include="Migrations\202007241628278_popustgamesaddedfinal.Designer.cs">
       <DependentUpon>202007241628278_popustgamesaddedfinal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007251048536_registerwithuseradded.cs" />
+    <Compile Include="Migrations\202007251048536_registerwithuseradded.Designer.cs">
+      <DependentUpon>202007251048536_registerwithuseradded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007251054545_sometin.cs" />
+    <Compile Include="Migrations\202007251054545_sometin.Designer.cs">
+      <DependentUpon>202007251054545_sometin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007251107230_registerloginwithusernameadded.cs" />
+    <Compile Include="Migrations\202007251107230_registerloginwithusernameadded.Designer.cs">
+      <DependentUpon>202007251107230_registerloginwithusernameadded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -736,6 +748,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007241628278_popustgamesaddedfinal.resx">
       <DependentUpon>202007241628278_popustgamesaddedfinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007251048536_registerwithuseradded.resx">
+      <DependentUpon>202007251048536_registerwithuseradded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007251054545_sometin.resx">
+      <DependentUpon>202007251054545_sometin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007251107230_registerloginwithusernameadded.resx">
+      <DependentUpon>202007251107230_registerloginwithusernameadded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
