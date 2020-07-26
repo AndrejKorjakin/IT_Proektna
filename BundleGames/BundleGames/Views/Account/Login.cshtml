@@ -5,6 +5,15 @@
 }
 
 
+
+
+    <head>
+        <style>
+            body {
+                background: -webkit-linear-gradient(left, #284262,#0f475c);
+            }
+        </style>
+    </head>
     
 
 <h2>@ViewBag.Title.</h2>
@@ -21,7 +30,7 @@
                 <div class="form-group text-white">
                     @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
                     <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.UserName, new { placeholder = "Enter Email...", @class = "form-control" })
+                        @Html.TextBoxFor(m => m.UserName, new { placeholder = "Enter Username...", @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -44,7 +53,7 @@
                     <div class="col-md-offset-2 col-md-10">
                         <input type="submit" value="Log in" class="btn btn-success mr-3" />
                         or
-                        <a href="https://localhost:44339/Account/Register" class="ml-3 text-white btn btn-primary btn-link">Register as a new user</a>
+                        @Html.ActionLink("Register as a new user","Register","Account", null, new { @class="btn btn-primary ml-3"})
                         
 
                     </div>

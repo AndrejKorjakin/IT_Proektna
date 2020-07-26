@@ -5,35 +5,49 @@
 }
 
 <h2>Index</h2>
+<style>
+    body {
+        background: -webkit-radial-gradient( #0b2a3c, #1b4456);
+    }
+</style>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NovaCena)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PopustGame)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NovaCena)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PopustGame)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.NovaCena)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PopustGame)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*NAMEGAME treba da bide imeto na igrata od listata na igri shto se vo weeklyspecial i da redirektira do
+                    details na taa igra ( po mozhnost )*@
+                <th scope="row"><a href="@item.PopustGamesList">1</a></th>
+                <td >
+                    @*NOVA CENA, treba da bide novata cena shto ke bide za X igra*@
+                    @Html.DisplayFor(modelItem => item.NovaCena)
+                </td>
+                <td>
+                    @*Treba igrite da se vlechat od listata na igri shto ke se stavat vo weeklyspecial listata na igri
+                        i site shto se na weekly special da se izlistaat*@
+                    @Html.DisplayFor(modelItem => item.PopustGame)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>

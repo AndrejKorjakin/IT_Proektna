@@ -255,6 +255,14 @@
     <Compile Include="Migrations\202007251107230_registerloginwithusernameadded.Designer.cs">
       <DependentUpon>202007251107230_registerloginwithusernameadded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007261043139_addedshoppingcart.cs" />
+    <Compile Include="Migrations\202007261043139_addedshoppingcart.Designer.cs">
+      <DependentUpon>202007261043139_addedshoppingcart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007261111162_26julydone.cs" />
+    <Compile Include="Migrations\202007261111162_26julydone.Designer.cs">
+      <DependentUpon>202007261111162_26julydone.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -262,6 +270,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\PopustGames.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Models\Store.cs" />
     <Compile Include="Models\Wishlist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -757,6 +766,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007251107230_registerloginwithusernameadded.resx">
       <DependentUpon>202007251107230_registerloginwithusernameadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007261043139_addedshoppingcart.resx">
+      <DependentUpon>202007261043139_addedshoppingcart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007261111162_26julydone.resx">
+      <DependentUpon>202007261111162_26julydone.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
