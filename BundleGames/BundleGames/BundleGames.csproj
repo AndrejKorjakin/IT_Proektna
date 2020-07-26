@@ -263,6 +263,10 @@
     <Compile Include="Migrations\202007261111162_26julydone.Designer.cs">
       <DependentUpon>202007261111162_26julydone.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007262047265_changeddetailsbuttons.cs" />
+    <Compile Include="Migrations\202007262047265_changeddetailsbuttons.Designer.cs">
+      <DependentUpon>202007262047265_changeddetailsbuttons.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -772,6 +776,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007261111162_26julydone.resx">
       <DependentUpon>202007261111162_26julydone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007262047265_changeddetailsbuttons.resx">
+      <DependentUpon>202007262047265_changeddetailsbuttons.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
