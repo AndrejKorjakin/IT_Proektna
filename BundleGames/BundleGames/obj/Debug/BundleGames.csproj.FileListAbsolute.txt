@@ -132,3 +132,5 @@ F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\Bundl
 F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.shoppingcartcontrolleradded.resources
 F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.addtowishlistgameadded.resources
 F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.usernamechanged.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.wishlistupdated.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.addtowishlistnotworking.resources

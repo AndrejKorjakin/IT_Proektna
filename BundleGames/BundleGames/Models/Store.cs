@@ -9,5 +9,11 @@ namespace BundleGames.Models
     {
         public int Id { get; set; }
         public string StoreName { get; set; }
+
+        public List<Game> StoreGames { get; set; }
+        public Store()
+        {
+            StoreGames = new List<Game>();
+        }
     }
 }

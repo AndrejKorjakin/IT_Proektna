@@ -41,5 +41,7 @@ namespace BundleGames.Models
         public System.Data.Entity.DbSet<BundleGames.Models.PopustGames> PopustGames { get; set; }
 
         public System.Data.Entity.DbSet<BundleGames.Models.ShoppingCart> ShoppingCarts { get; set; }
+
+        public System.Data.Entity.DbSet<BundleGames.Models.Store> Stores { get; set; }
     }
 }

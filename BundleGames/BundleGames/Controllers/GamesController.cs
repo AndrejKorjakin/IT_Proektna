@@ -23,22 +23,16 @@ namespace BundleGames.Controllers
             return View(db.Games.ToList());
         }
 
-        public ActionResult AddGameToWishlist(int? id)
-        {
-            var model = new AddToWishListModel();
-            model.GameId = id??0;
-
-            return View(db.Games.ToList());
-        }
+        
         [HttpPost]
-        public ActionResult AddGameToWishlist(AddToWishListModel model)
+        public ActionResult AddGameToWishlist(int id)
         {
-            var game = db.Games.Find(model.GameId);
+            var game = db.Games.Find(id);
             var korisnik = new Korisnik();
             korisnik.Id= Convert.ToInt32(User.Identity.GetUserId());
             korisnik.Korisnik_Wishlist.Wishlist_Games.Add(game);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return View(korisnik.Korisnik_Wishlist.Wishlist_Games.ToList());
         }
 
         // GET: Games/Details/5
@@ -73,6 +67,7 @@ namespace BundleGames.Controllers
             {
                 db.Games.Add(game);
                 db.SaveChanges();
+                
                 return RedirectToAction("Index");
             }
 

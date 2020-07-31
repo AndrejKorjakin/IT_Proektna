@@ -39,8 +39,8 @@
                         }
 
                         <a href="#" class="btn btn-success mt-2">Add To Card</a>
-                        <a class="btn btn-warning mt-2" href="@Url.Action("AddGameToWishlist", "GamesController")">Add To Wishlist</a>
-                        
+                        @Html.ActionLink("Add Game To Wishlist", "AddGameToWishlist", null, new { id= item.Id }, new { @class= "btn btn-warning mt-2" })
+
 
                         @*
            @if (User.IsInRole("Administrator"))

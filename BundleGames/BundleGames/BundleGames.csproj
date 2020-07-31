@@ -176,6 +176,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PopustGamesController.cs" />
     <Compile Include="Controllers\ShoppingCartsController.cs" />
+    <Compile Include="Controllers\StoresController.cs" />
     <Compile Include="Controllers\WishlistsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -279,6 +280,14 @@
     <Compile Include="Migrations\202007292332262_usernamechanged.cs" />
     <Compile Include="Migrations\202007292332262_usernamechanged.Designer.cs">
       <DependentUpon>202007292332262_usernamechanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007311953109_wishlistupdated.cs" />
+    <Compile Include="Migrations\202007311953109_wishlistupdated.Designer.cs">
+      <DependentUpon>202007311953109_wishlistupdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007311959038_addtowishlistnotworking.cs" />
+    <Compile Include="Migrations\202007311959038_addtowishlistnotworking.Designer.cs">
+      <DependentUpon>202007311959038_addtowishlistnotworking.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -720,6 +729,11 @@
     <Content Include="Views\ShoppingCarts\Edit.cshtml" />
     <Content Include="Views\ShoppingCarts\Index.cshtml" />
     <Content Include="Views\Games\AddGameToWishlist.cshtml" />
+    <Content Include="Views\Stores\Create.cshtml" />
+    <Content Include="Views\Stores\Delete.cshtml" />
+    <Content Include="Views\Stores\Details.cshtml" />
+    <Content Include="Views\Stores\Edit.cshtml" />
+    <Content Include="Views\Stores\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -808,6 +822,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007292332262_usernamechanged.resx">
       <DependentUpon>202007292332262_usernamechanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007311953109_wishlistupdated.resx">
+      <DependentUpon>202007311953109_wishlistupdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007311959038_addtowishlistnotworking.resx">
+      <DependentUpon>202007311959038_addtowishlistnotworking.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
