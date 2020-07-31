@@ -39,13 +39,15 @@
                         }
 
                         <a href="#" class="btn btn-success mt-2">Add To Card</a>
-                        <a class="btn btn-warning mt-2">Add To Wishlist</a>
+                        <a class="btn btn-warning mt-2" href="@Url.Action("AddGameToWishlist", "GamesController")">Add To Wishlist</a>
+                        
+
                         @*
-                               @if (User.IsInRole("Administrator"))
-                            {
-                                <a>@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning mt-2" })</a>
-                                <a>@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger mt-2" })</a>
-                            }
+           @if (User.IsInRole("Administrator"))
+        {
+            <a>@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning mt-2" })</a>
+            <a>@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger mt-2" })</a>
+        }
                         *@
 
 

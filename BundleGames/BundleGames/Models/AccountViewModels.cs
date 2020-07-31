@@ -81,11 +81,11 @@ namespace BundleGames.Models
 
         [Required]
         
-        [Display(Name = "UserName")]
+        [Display(Name = "Username")]
         public string UserName { get; set; }
         [Required]
         
-        [Display(Name = "Full Name  ")]
+        [Display(Name = "Full Name")]
         public string FullName { get; set; }
     }
 

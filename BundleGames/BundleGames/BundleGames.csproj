@@ -175,6 +175,7 @@
     <Compile Include="Controllers\KorisniksController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PopustGamesController.cs" />
+    <Compile Include="Controllers\ShoppingCartsController.cs" />
     <Compile Include="Controllers\WishlistsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -267,8 +268,21 @@
     <Compile Include="Migrations\202007262047265_changeddetailsbuttons.Designer.cs">
       <DependentUpon>202007262047265_changeddetailsbuttons.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007280923117_shoppingcartcontrolleradded.cs" />
+    <Compile Include="Migrations\202007280923117_shoppingcartcontrolleradded.Designer.cs">
+      <DependentUpon>202007280923117_shoppingcartcontrolleradded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007281035025_addtowishlistgameadded.cs" />
+    <Compile Include="Migrations\202007281035025_addtowishlistgameadded.Designer.cs">
+      <DependentUpon>202007281035025_addtowishlistgameadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007292332262_usernamechanged.cs" />
+    <Compile Include="Migrations\202007292332262_usernamechanged.Designer.cs">
+      <DependentUpon>202007292332262_usernamechanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AddToWishListModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Korisnik.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -700,6 +714,12 @@
     <Content Include="Views\PopustGames\Details.cshtml" />
     <Content Include="Views\PopustGames\Edit.cshtml" />
     <Content Include="Views\PopustGames\Index.cshtml" />
+    <Content Include="Views\ShoppingCarts\Create.cshtml" />
+    <Content Include="Views\ShoppingCarts\Delete.cshtml" />
+    <Content Include="Views\ShoppingCarts\Details.cshtml" />
+    <Content Include="Views\ShoppingCarts\Edit.cshtml" />
+    <Content Include="Views\ShoppingCarts\Index.cshtml" />
+    <Content Include="Views\Games\AddGameToWishlist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -779,6 +799,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007262047265_changeddetailsbuttons.resx">
       <DependentUpon>202007262047265_changeddetailsbuttons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007280923117_shoppingcartcontrolleradded.resx">
+      <DependentUpon>202007280923117_shoppingcartcontrolleradded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007281035025_addtowishlistgameadded.resx">
+      <DependentUpon>202007281035025_addtowishlistgameadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007292332262_usernamechanged.resx">
+      <DependentUpon>202007292332262_usernamechanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

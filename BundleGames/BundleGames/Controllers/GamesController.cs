@@ -7,6 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using BundleGames.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.Owin.Security.Provider;
+
 
 namespace BundleGames.Controllers
 {
@@ -18,6 +21,24 @@ namespace BundleGames.Controllers
         public ActionResult Index()
         {
             return View(db.Games.ToList());
+        }
+
+        public ActionResult AddGameToWishlist(int? id)
+        {
+            var model = new AddToWishListModel();
+            model.GameId = id??0;
+
+            return View(db.Games.ToList());
+        }
+        [HttpPost]
+        public ActionResult AddGameToWishlist(AddToWishListModel model)
+        {
+            var game = db.Games.Find(model.GameId);
+            var korisnik = new Korisnik();
+            korisnik.Id= Convert.ToInt32(User.Identity.GetUserId());
+            korisnik.Korisnik_Wishlist.Wishlist_Games.Add(game);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         // GET: Games/Details/5

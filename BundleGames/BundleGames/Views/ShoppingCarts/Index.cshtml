@@ -1,0 +1,91 @@
+﻿@model IEnumerable<BundleGames.Models.ShoppingCart>
+
+@{
+    ViewBag.Title = "Index";
+}
+<html>
+
+<head>
+    
+        <style>
+            body {
+                background: -webkit-radial-gradient( #0b2a3c, #1b4456);
+            }
+
+            .pozadina-index {
+                background: -webkit-radial-gradient( #283f63, #1b4456);
+            }
+        </style>
+    </head>
+    <body>
+
+        @foreach (var item in Model)
+        {
+            <div class="card mt-5 pozadina-index">
+                <div class="row mt-5 no-gutters mt-2">
+                    <div class="col-2">
+
+                        <img class="ml-1 mt-1" style="height:120px;width:180px;" src="@Html.DisplayFor(modelItem => item.UserId)" />
+
+
+                    </div>
+                    <div class="col mt-1">
+                        <div class="card-block px-2">
+                            <h4 class="card-title ">@Html.ActionLink("ShoppingCartNAME", "ShoppingCarts", new { id = item.Id }, new { @class = "text-warning" })</h4>
+
+                            @if (item.UserId == 0)
+                            {
+                                <h5 class="card-text text-info font-weight-bold">Free To Play</h5>
+                            }
+                            else
+                            {
+                                <h5 class="card-text text-success font-weight-bold">@item.UserId$</h5>
+                            }
+
+                            <a href="#" class="btn btn-success mt-2">Add To Card</a>
+                            <a class="btn btn-warning mt-2">Add To Wishlist</a>
+                            @*
+                                   @if (User.IsInRole("Administrator"))
+                                {
+                                    <a>@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning mt-2" })</a>
+                                    <a>@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger mt-2" })</a>
+                                }
+                            *@
+
+
+                            <a>@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-info mt-2" })</a>
+                            <a class="btn btn-link btn-danger js-delete mt-2" data-id="@item.Id">Delete</a>
+
+
+                        </div>
+                    </div>
+
+                    <div class="card-footer w-100 text-muted bg-dark mt-3">
+                        <label>TAGS: ????????????????????????</label>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </body>
+    @section scripts {
+        <script>
+            $(".js-delete").click(function () {
+                var button = $(this);
+
+                bootbox.confirm("Are you sure?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            method: "GET",
+                            url: "/ShoppingCarts/Delete/" + button.attr("data-id"),
+                            success: function () {
+                                table.row(button.parents("tr").remove().draw());
+                            }
+                        })
+                    }
+                })
+            })
+        </script>
+    }
+</body>
+</html>

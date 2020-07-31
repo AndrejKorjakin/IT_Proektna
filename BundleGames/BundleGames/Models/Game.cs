@@ -8,7 +8,7 @@ namespace BundleGames.Models
 {
     public class Game
     {
-        
+
         [Key]
         public int Id { get; set; }
         [Required]
@@ -32,7 +32,6 @@ namespace BundleGames.Models
         [Required]
         public string Developer { get; set; }
         
-
         public List<string> Tags { get; set; }
 
         public Game()
