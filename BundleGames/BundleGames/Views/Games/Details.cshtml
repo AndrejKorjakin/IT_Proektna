@@ -34,7 +34,7 @@
                                 }
                                 else
                                 {
-                                    <label class="card-text text-dark">@Html.DisplayFor(model => model.Game_Cena)</label>
+                                    <label class="card-text text-dark">@Html.DisplayFor(model => model.Game_Cena)$</label>
                                 }
                             </h5>
                         </div>
@@ -50,8 +50,9 @@
                             <h5 class="text-warning mt-3">Release Date:</h5>
                             <p class="card-text font-weight-bold ml-2">@Html.DisplayFor(model => model.Release_Date)</p>
                         </div>
-                        <a href="#" class="btn btn-success mt-5">Add To Card <span class="fa fa-long-arrow-alt-right"></span></a>
-                        <a href="#" class="btn btn-primary mt-5">Add To Wishlist <span class="fa fa-long-arrow-alt-right"></span></a>
+                        @Html.ActionLink("Add To Card", "Index", "ShoppingCarts", null, new { @class = " btn btn-success mt-2 " })
+
+                        @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", "Games",@*new { id = Model.Id }*@ null, new { @class = "btn btn-warning mt-2" })
                     </div>
                     
                     <div class="card-footer">

@@ -38,8 +38,8 @@
                             <h5 class="card-text text-success font-weight-bold">@item.Game_Cena$</h5>
                         }
 
-                        <a href="#" class="btn btn-success mt-2">Add To Card</a>
-                        @Html.ActionLink("Add Game To Wishlist", "AddGameToWishlist", null, new { id= item.Id }, new { @class= "btn btn-warning mt-2" })
+                        @Html.ActionLink("Add To Card", "Index", "ShoppingCarts", null, new { @class = " btn btn-success mt-2 " })
+                        @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", null, new { id = item.Id }, new { @class = "btn btn-warning mt-2" })
 
 
                         @*

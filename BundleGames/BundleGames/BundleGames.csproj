@@ -289,6 +289,10 @@
     <Compile Include="Migrations\202007311959038_addtowishlistnotworking.Designer.cs">
       <DependentUpon>202007311959038_addtowishlistnotworking.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008030935237_addtocardandaddtowishlistlinksupated.cs" />
+    <Compile Include="Migrations\202008030935237_addtocardandaddtowishlistlinksupated.Designer.cs">
+      <DependentUpon>202008030935237_addtocardandaddtowishlistlinksupated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddToWishListModel.cs" />
@@ -828,6 +832,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007311959038_addtowishlistnotworking.resx">
       <DependentUpon>202007311959038_addtowishlistnotworking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008030935237_addtocardandaddtowishlistlinksupated.resx">
+      <DependentUpon>202008030935237_addtocardandaddtowishlistlinksupated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
