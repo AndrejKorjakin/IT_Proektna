@@ -53,6 +53,7 @@
                         @Html.ActionLink("Add To Card", "Index", "ShoppingCarts", null, new { @class = " btn btn-success mt-2 " })
 
                         @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", "Games",@*new { id = Model.Id }*@ null, new { @class = "btn btn-warning mt-2" })
+                    
                     </div>
                     
                     <div class="card-footer">
@@ -84,7 +85,7 @@
 <div class="row">
     <div class="col mt-4 ml-3">
         <p>
-            @Html.ActionLink("Edit", "Edit", null, new { id = Model.Id, @class = "btn bg-dark btn-outline-success" })
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn bg-dark btn-outline-success" })
             
             @Html.ActionLink("Back to List", "Index", null, new {@class= "btn bg-dark btn-outline-warning ml-3" })
         </p>

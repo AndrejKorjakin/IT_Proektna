@@ -1,0 +1,17 @@
+﻿@model BundleGames.Models.Korisnik
+@using Microsoft.AspNet.Identity;
+@{
+    ViewBag.Title = "ProfileShow";
+}
+
+<h2>ProfileShow</h2>
+
+<head>
+
+</head>
+<body>
+    @Html.HiddenFor(m => m.Id)
+    <h2>hello</h2>
+    @ViewBag.Id=@User.Identity.GetUserId();
+    @Html.ActionLink(User.Identity.Name, "ProfileShow", "Korisniks", new {id=ViewBag.Id }, new { @class="btn btn-outline-info"} )
+</body>

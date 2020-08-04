@@ -52,8 +52,8 @@
 
 
                         <a>@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-info mt-2" })</a>
-                        <a class="btn btn-link btn-danger js-delete mt-2" data-id="@item.Id">Delete</a>
-
+                        <a class="btn btn-link btn-danger js-delete mt-2 text-white" data-id="@item.Id">Delete</a>
+                        <a>@Html.ActionLink("Add To Weekly Special", "Index","PopustGames", new { id = item.Id }, new { @class = "btn btn-secondary mt-2" })</a>
 
                     </div>
                 </div>

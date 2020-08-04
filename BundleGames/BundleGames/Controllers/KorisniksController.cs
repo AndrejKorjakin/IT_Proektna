@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using BundleGames.Models;
+using Microsoft.AspNet.Identity;
 
 namespace BundleGames.Controllers
 {
@@ -18,6 +19,14 @@ namespace BundleGames.Controllers
         public ActionResult Index()
         {
             return View(db.Korisniks.ToList());
+        }
+
+        public ActionResult ProfileShow(int id)
+        {
+            Korisnik korisnik = db.Korisniks.Find(id);
+            
+            
+            return View();
         }
 
         // GET: Korisniks/Details/5

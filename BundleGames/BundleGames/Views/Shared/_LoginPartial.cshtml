@@ -7,7 +7,7 @@
 
         <ul class="nav navbar-nav navbar-right">
             <li>
-               <label class="text-white small">Welcome</label> <span class="btn btn-outline-info mr-3">@User.Identity.Name</span>
+               <label class="text-white small">Welcome</label> @Html.ActionLink(@User.Identity.Name,"Index","Korisniks", new { Username = @User.Identity.Name }, new {@class="btn btn-outline-info mr-3 ml-2" })
             </li>
             <li><a class="btn btn-danger" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
         </ul>

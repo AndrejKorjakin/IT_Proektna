@@ -293,6 +293,10 @@
     <Compile Include="Migrations\202008030935237_addtocardandaddtowishlistlinksupated.Designer.cs">
       <DependentUpon>202008030935237_addtocardandaddtowishlistlinksupated.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008040913576_popustgamessomethingadded.cs" />
+    <Compile Include="Migrations\202008040913576_popustgamessomethingadded.Designer.cs">
+      <DependentUpon>202008040913576_popustgamessomethingadded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddToWishListModel.cs" />
@@ -738,6 +742,7 @@
     <Content Include="Views\Stores\Details.cshtml" />
     <Content Include="Views\Stores\Edit.cshtml" />
     <Content Include="Views\Stores\Index.cshtml" />
+    <Content Include="Views\Korisniks\ProfileShow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -835,6 +840,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008030935237_addtocardandaddtowishlistlinksupated.resx">
       <DependentUpon>202008030935237_addtocardandaddtowishlistlinksupated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008040913576_popustgamessomethingadded.resx">
+      <DependentUpon>202008040913576_popustgamessomethingadded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
