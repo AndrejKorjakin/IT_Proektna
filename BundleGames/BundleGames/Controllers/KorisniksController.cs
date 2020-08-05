@@ -7,7 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using BundleGames.Models;
+using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
+
 
 namespace BundleGames.Controllers
 {
@@ -15,17 +17,18 @@ namespace BundleGames.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        
+
         // GET: Korisniks
         public ActionResult Index()
         {
             return View(db.Korisniks.ToList());
         }
 
-        public ActionResult ProfileShow(int id)
+        public ActionResult ProfileShow(int? id)
         {
-            Korisnik korisnik = db.Korisniks.Find(id);
             
-            
+
             return View();
         }
 
@@ -96,6 +99,17 @@ namespace BundleGames.Controllers
                 return RedirectToAction("Index");
             }
             return View(korisnik);
+        }
+        public ActionResult WishListDelete(int? id)
+        {
+            //Treba da se izbrishe igrata od wishlist na korisnikot
+            Game game = new Game();
+            game.Id = 8;
+            db.Korisniks.Find(1).Korisnik_Wishlist.Wishlist_Games.Remove(game);
+            
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
         }
 
         // GET: Korisniks/Delete/5

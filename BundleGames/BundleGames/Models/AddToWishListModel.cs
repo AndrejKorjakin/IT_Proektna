@@ -7,8 +7,8 @@ namespace BundleGames.Models
 {
     public class AddToWishListModel
     {
+        public int Id { get; set; }
         public int GameId { get; set; }
-        public int WishlistId { get; set; }
         public int KorisnikId { get; set; }
         public List<Game> WishListGames { get; set; }
 
@@ -16,5 +16,6 @@ namespace BundleGames.Models
         {
             WishListGames = new List<Game>();
         }
+
     }
 }

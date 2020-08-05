@@ -17,23 +17,27 @@ namespace BundleGames.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        
+
         // GET: Games
         public ActionResult Index()
         {
             return View(db.Games.ToList());
         }
-
-        
-        [HttpPost]
-        public ActionResult AddGameToWishlist(int id)
+        public ActionResult Wishlist()
         {
-            var game = db.Games.Find(id);
-            var korisnik = new Korisnik();
-            korisnik.Id= Convert.ToInt32(User.Identity.GetUserId());
-            korisnik.Korisnik_Wishlist.Wishlist_Games.Add(game);
-            db.SaveChanges();
-            return View(korisnik.Korisnik_Wishlist.Wishlist_Games.ToList());
+            return View(db.Games.ToList());
         }
+
+
+        public ActionResult AddGameToWishlist(int id)
+        { 
+            
+            db.Korisniks.Find(id).Korisnik_Wishlist.Wishlist_Games.Add(db.Games.Find(id));
+            db.SaveChanges();
+            return View();
+        }
+        
 
         // GET: Games/Details/5
         public ActionResult Details(int? id)
@@ -115,8 +119,10 @@ namespace BundleGames.Controllers
             return RedirectToAction("Index");
 
         }
-
         
+        
+
+
         public ActionResult DeleteConfirmed(int id)
         {
             Game game = db.Games.Find(id);

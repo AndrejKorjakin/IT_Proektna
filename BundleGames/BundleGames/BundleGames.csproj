@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AkauntController.cs" />
     <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KorisniksController.cs" />
@@ -296,6 +297,58 @@
     <Compile Include="Migrations\202008040913576_popustgamessomethingadded.cs" />
     <Compile Include="Migrations\202008040913576_popustgamessomethingadded.Designer.cs">
       <DependentUpon>202008040913576_popustgamessomethingadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008041339267_addtowishmoedelchanged.cs" />
+    <Compile Include="Migrations\202008041339267_addtowishmoedelchanged.Designer.cs">
+      <DependentUpon>202008041339267_addtowishmoedelchanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008041708304_userasdasd.cs" />
+    <Compile Include="Migrations\202008041708304_userasdasd.Designer.cs">
+      <DependentUpon>202008041708304_userasdasd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008041744368_wishlistadded.cs" />
+    <Compile Include="Migrations\202008041744368_wishlistadded.Designer.cs">
+      <DependentUpon>202008041744368_wishlistadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008050838077_wishlistdeleteaddded.cs" />
+    <Compile Include="Migrations\202008050838077_wishlistdeleteaddded.Designer.cs">
+      <DependentUpon>202008050838077_wishlistdeleteaddded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008050850262_userregisterchanged.cs" />
+    <Compile Include="Migrations\202008050850262_userregisterchanged.Designer.cs">
+      <DependentUpon>202008050850262_userregisterchanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008050926541_myloginandregisteradded.cs" />
+    <Compile Include="Migrations\202008050926541_myloginandregisteradded.Designer.cs">
+      <DependentUpon>202008050926541_myloginandregisteradded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008050945434_loginregisterupdated.cs" />
+    <Compile Include="Migrations\202008050945434_loginregisterupdated.Designer.cs">
+      <DependentUpon>202008050945434_loginregisterupdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008050947218_dbcontextakaunt.cs" />
+    <Compile Include="Migrations\202008050947218_dbcontextakaunt.Designer.cs">
+      <DependentUpon>202008050947218_dbcontextakaunt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008050955468_ApplicationDbContextchanged.cs" />
+    <Compile Include="Migrations\202008050955468_ApplicationDbContextchanged.Designer.cs">
+      <DependentUpon>202008050955468_ApplicationDbContextchanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008051017114_korisnikstouseraccoutns.cs" />
+    <Compile Include="Migrations\202008051017114_korisnikstouseraccoutns.Designer.cs">
+      <DependentUpon>202008051017114_korisnikstouseraccoutns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008051030520_registerloginupdated.cs" />
+    <Compile Include="Migrations\202008051030520_registerloginupdated.Designer.cs">
+      <DependentUpon>202008051030520_registerloginupdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008051338257_korisnikID.cs" />
+    <Compile Include="Migrations\202008051338257_korisnikID.Designer.cs">
+      <DependentUpon>202008051338257_korisnikID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008051457318_userdatabasecreated.cs" />
+    <Compile Include="Migrations\202008051457318_userdatabasecreated.Designer.cs">
+      <DependentUpon>202008051457318_userdatabasecreated.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -743,6 +796,10 @@
     <Content Include="Views\Stores\Edit.cshtml" />
     <Content Include="Views\Stores\Index.cshtml" />
     <Content Include="Views\Korisniks\ProfileShow.cshtml" />
+    <Content Include="Views\Games\Wishlist.cshtml" />
+    <Content Include="Views\Akaunt\LoggedIn.cshtml" />
+    <Content Include="Views\Akaunt\Register.cshtml" />
+    <Content Include="Views\Akaunt\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -843,6 +900,45 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008040913576_popustgamessomethingadded.resx">
       <DependentUpon>202008040913576_popustgamessomethingadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008041339267_addtowishmoedelchanged.resx">
+      <DependentUpon>202008041339267_addtowishmoedelchanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008041708304_userasdasd.resx">
+      <DependentUpon>202008041708304_userasdasd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008041744368_wishlistadded.resx">
+      <DependentUpon>202008041744368_wishlistadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008050838077_wishlistdeleteaddded.resx">
+      <DependentUpon>202008050838077_wishlistdeleteaddded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008050850262_userregisterchanged.resx">
+      <DependentUpon>202008050850262_userregisterchanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008050926541_myloginandregisteradded.resx">
+      <DependentUpon>202008050926541_myloginandregisteradded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008050945434_loginregisterupdated.resx">
+      <DependentUpon>202008050945434_loginregisterupdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008050947218_dbcontextakaunt.resx">
+      <DependentUpon>202008050947218_dbcontextakaunt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008050955468_ApplicationDbContextchanged.resx">
+      <DependentUpon>202008050955468_ApplicationDbContextchanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008051017114_korisnikstouseraccoutns.resx">
+      <DependentUpon>202008051017114_korisnikstouseraccoutns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008051030520_registerloginupdated.resx">
+      <DependentUpon>202008051030520_registerloginupdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008051338257_korisnikID.resx">
+      <DependentUpon>202008051338257_korisnikID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008051457318_userdatabasecreated.resx">
+      <DependentUpon>202008051457318_userdatabasecreated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

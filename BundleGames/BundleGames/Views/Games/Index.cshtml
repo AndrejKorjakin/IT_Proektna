@@ -6,7 +6,6 @@
     <style>
         body {
             background: -webkit-radial-gradient( #0b2a3c, #1b4456);
-
         }
         .pozadina-index {
             background: -webkit-radial-gradient( #283f63, #1b4456);
@@ -31,7 +30,7 @@
 
                         @if (item.Game_Cena == 0)
                         {
-                            <h5 class="card-text text-info font-weight-bold">Free To Play</h5>
+                            <h5 class="card-text text-success font-weight-bold">Free To Play</h5>
                         }
                         else
                         {
@@ -39,7 +38,7 @@
                         }
 
                         @Html.ActionLink("Add To Card", "Index", "ShoppingCarts", null, new { @class = " btn btn-success mt-2 " })
-                        @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", null, new { id = item.Id }, new { @class = "btn btn-warning mt-2" })
+                        @Html.ActionLink("Add To Wishlist", "Wishlist", null, new { @class = "btn btn-warning mt-2" })
 
 
                         @*
