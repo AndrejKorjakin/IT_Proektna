@@ -35,7 +35,7 @@
                             @Html.ActionLink("WEEKLY SPECIAL", "Index", "PopustGames", null, new { @class = " btn text-info  border-right" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("PROFILE", "ProfileShow", "Korisniks", null, new { @class = " btn text-info  border-right" })
+                            @Html.ActionLink("PROFILE", "ProfileShow", "Korisniks", new { id = Session["Id"]}, new { @class = " btn text-info  border-right" })
                         </li>
                         <li class="nav-item">
                             @Html.ActionLink("CONTACT", "Contact", "Home", null, new { @class = " btn text-info border-right" })

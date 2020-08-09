@@ -1,22 +1,20 @@
 ﻿@using Microsoft.AspNet.Identity
 
-@if (Request.IsAuthenticated)
+@if (Session["Username"]!=null)
 {
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-    {
+    
         @Html.AntiForgeryToken()
 
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <label class="text-white small">Welcome</label> @if (Session["Id"].ToString() != null)
-                {
-                    @Html.ActionLink(Session["Username"].ToString(),"ProfileShow","Korisniks", new { id = Session["Id"].ToString()},new { @class=" btn btn-outline-info ml-2 mr-3" })
-                }
+                <button class="btn btn-outline-info">@Session["Username"]</button>
             </li>
-            <li><a class="btn btn-danger" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+            <li>
+                @Html.ActionLink("Log Out", "LogOut","Akaunt", null, new { @class="btn btn-outline-danger ml-3" })
+            </li>
         </ul>
     }
-}
+
 else
 {
 

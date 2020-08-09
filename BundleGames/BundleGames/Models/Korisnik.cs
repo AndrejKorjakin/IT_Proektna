@@ -23,19 +23,16 @@ namespace BundleGames.Models
         public string Password { get; set; }
         [DataType(DataType.Password)]
         [Required]
+        [Display(Name ="Confirm Password")]
         public string ConfirmPassword { get; set; }
         public string Image { get; set; }
         [Required]
         [Range(10,99)]
         public int Age { get; set; }
-        public List<Game> Korisnik_Games { get; set; }
+        public virtual ICollection<Game> Korisnik_Games { get; set; }
 
         public Wishlist Korisnik_Wishlist { get; set; }
 
-        public Korisnik()
-        {
-            
-            Korisnik_Games = new List<Game>();
-        }
+        
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace BundleGames.Controllers
 {
@@ -29,13 +30,26 @@ namespace BundleGames.Controllers
 
             if (ModelState.IsValid)
             {
+
                 using(ApplicationDbContext db = new ApplicationDbContext())
                 {
-                    db.Korisniks.Add(account);
-                    db.SaveChanges();
+                    var Username = db.Korisniks.Any(x => x.Username == account.Username);
+                    if (Username)
+                    {
+                        ModelState.AddModelError("Username", "User with this Username or Email already exists");
+                        return View(account);
+                    }else
+                    {
+                        db.Korisniks.Add(account);
+                        db.SaveChanges();
+                        ModelState.Clear();
+                        ViewBag.Message = account.Korisnik_Name + " " + "successful registration";
+                        return RedirectToAction("Login", "Akaunt");
+                    } 
+                    
                 }
-                ModelState.Clear();
-                ViewBag.Message = account.Korisnik_Name + " " + "successful registration";
+                
+               
             }
             else
             {
@@ -54,34 +68,36 @@ namespace BundleGames.Controllers
             using(ApplicationDbContext db = new ApplicationDbContext())
             {
 
-                var usr = db.Korisniks.Single(u => u.Username == user.Username && u.Password == user.Password);
+                
+                var Username = db.Korisniks.Any(x => x.Username == user.Username);
+                if (!Username)
+                {
+                    ViewBag.Errormasage = "USER NOT FOUND!";
+                }else
+                {
+                    var usr = db.Korisniks.Single(u => u.Username == user.Username && u.Password == user.Password);
+                    Session["UserId"] = user.Id.ToString();
+                    Session["Username"] = user.Username.ToString();
+                    return RedirectToAction("Index", "Games");
+                }
                 if (user == null)
                 {
                     ViewBag.Errormasage = "USER IS NULL";
                 }
-                else
-                {
-                    Session["Id"] = user.Id.ToString();
-                    Session["Username"] = user.Username.ToString();
-                    return RedirectToAction("LoggedIn");
-                }
+                
                 return View();
                     
                 
             }
             
         }
-
-        public ActionResult LoggedIn()
+        public ActionResult LogOut()
         {
-            if (Session["Id"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
+            FormsAuthentication.SignOut();
+            Session.Abandon(); // it will clear the session at the end of request
+            return RedirectToAction("Index", "Games");
         }
+
+        
     }
 }

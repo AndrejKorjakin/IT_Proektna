@@ -149,3 +149,5 @@ F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\Bundl
 F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.registerloginupdated.resources
 F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.korisnikID.resources
 F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.userdatabasecreated.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.korisnikgamesintovirtual.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.loginregisterpartialviewfixed.resources

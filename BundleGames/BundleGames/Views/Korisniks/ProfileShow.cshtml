@@ -1,5 +1,5 @@
-﻿@using BundleGames.Models 
-@model IEnumerable <BundleGames.Models.Korisnik>
+﻿
+@model BundleGames.Models.Korisnik
 @{
     ViewBag.Title = "ProfileShow";
 }
@@ -15,65 +15,66 @@
         </style>
         <h1 class="mt-5"></h1>
         <h1 class="text-warning btn btn-outline-info mt-5">
-            Your profile: 
+
+            <label>Welcome: @ViewBag.Username </label>
         </h1>
     </head>
 }
-@*
-    <body>
 
-           @foreach (var item in Model)
-           {
+<body>
 
-               <div class="card mt-5 pozadina-index">
-                   <div class="row mt-5 no-gutters mt-2">
-                       <div class="col-2">
+    @foreach (var item in Model.Korisnik_Wishlist.Wishlist_Games)
+    {
 
-                           <img class="ml-1 mt-1" style="height:120px;width:180px;" src="@Html.DisplayFor(modelItem =>  item.Image)" />
+        <div class="card mt-5 pozadina-index">
+            <div class="row mt-5 no-gutters mt-2">
+                <div class="col-2">
 
-                       </div>
+                    <img class="ml-1 mt-1" style="height:120px;width:180px;" src="@Html.DisplayFor(modelItem =>  item.Game_Image)" />
 
-                       <div class="col mt-1">
-                           <div class="card-block px-2">
-                               <h4 class="card-title ">@Html.ActionLink(item.Korisnik_Name, "Details", new { id = item.Id }, new { @class = "text-warning" })</h4>
+                </div>
 
-                               @if (1 == 0)
-                               {
-                                   <h5 class="card-text text-info font-weight-bold">Free To Play</h5>
-                               }
-                               else
-                               {
-                                   <h5 class="card-text text-success font-weight-bold">@item.Korisnik_Name$</h5>
-                               }
+                <div class="col mt-1">
+                    <div class="card-block px-2">
+                        <h4 class="card-title ">@Html.ActionLink(item.Game_Name, "Details", new { id = item.Id }, new { @class = "text-warning" })</h4>
 
-                               @Html.ActionLink("Add To Card", "Index", "ShoppingCarts", null, new { @class = " btn btn-success mt-2 " })
-                               @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", null, new { id = item.Id }, new { @class = "btn btn-warning mt-2" })
+                        @if (item.Game_Cena == 0)
+                        {
+                            <h5 class="card-text text-info font-weight-bold">Free To Play</h5>
+                        }
+                        else
+                        {
+                            <h5 class="card-text text-success font-weight-bold">@item.Game_Cena$</h5>
+                        }
 
-
-                               @*
-                                      @if (User.IsInRole("Administrator"))
-                                   {
-                                       <a>@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning mt-2" })</a>
-                                       <a>@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger mt-2" })</a>
-                                   }
-*@
-@*
-    <a>@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-info mt-2" })</a>
-    <a class="btn btn-link btn-danger js-delete mt-2" data-id="@item.Id">Delete</a>
+                        @Html.ActionLink("Add To Card", "Index", "ShoppingCarts", null, new { @class = " btn btn-success mt-2 " })
+                        @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", null, new { id = item.Id }, new { @class = "btn btn-warning mt-2" })
 
 
-                                </div>
-                            </div>
 
-    <div class="card-footer w-100 text-muted bg-dark mt-3">
-        <label>TAGS: ????????????????????????</label>
-    </div>
-                        </div>
+                        @if (User.IsInRole("Administrator"))
+                        {
+                            <a>@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning mt-2" })</a>
+                            <a>@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger mt-2" })</a>
+                        }
+
+
+                        <a>@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-info mt-2" })</a>
+                        <a class="btn btn-link btn-danger js-delete mt-2" data-id="@item.Id">Delete</a>
+
+
                     </div>
-                }
+                </div>
 
-            </body>
+                <div class="card-footer w-100 text-muted bg-dark mt-3">
+                    
+                </div>
+            </div>
+        </div>
+    }
 
+</body>
+@*
     @section scripts{
         <script>
             $(".js-delete").click(function () {
@@ -93,5 +94,6 @@
             })
         </script>
     }
-*@
 
+
+*@

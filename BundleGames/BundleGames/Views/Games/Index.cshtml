@@ -37,9 +37,9 @@
                             <h5 class="card-text text-success font-weight-bold">@item.Game_Cena$</h5>
                         }
 
-                        @Html.ActionLink("Add To Card", "Index", "ShoppingCarts", null, new { @class = " btn btn-success mt-2 " })
-                        @Html.ActionLink("Add To Wishlist", "Wishlist", null, new { @class = "btn btn-warning mt-2" })
-
+                        @Html.ActionLink("Add To Card", "Index", "ShoppingCarts", new { id=item.Id}, new { @class = " btn btn-success mt-2 " })
+                        @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", new { id = item.Id, userid = Session["UserId"] }, new { @class = "btn btn-warning mt-2" })
+                        
 
                         @*
            @if (User.IsInRole("Administrator"))
@@ -58,7 +58,10 @@
                 </div>
 
                 <div class="card-footer w-100 text-muted bg-dark mt-3">
-                    <label>TAGS: ????????????????????????</label>
+                    <label><span class="text-white">TAGS:</span> <span class="btn-sm btn-primary">Adventure</span>
+                    <span class="btn-sm btn-primary">Shooter</span>
+                    <span class="btn-sm btn-primary">MOBA</span>
+                    <span class="btn-sm btn-primary">Action</span></label>
                 </div>
             </div>
         </div>

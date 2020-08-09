@@ -32,12 +32,9 @@ namespace BundleGames.Models
         [Required]
         public string Developer { get; set; }
         
-        public List<string> Tags { get; set; }
+        public string Tags { get; set; }
 
-        public Game()
-        {
-            Tags = new List<string>();
-        }
+       
 
 
     }

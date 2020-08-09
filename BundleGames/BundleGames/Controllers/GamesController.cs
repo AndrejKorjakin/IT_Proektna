@@ -29,15 +29,26 @@ namespace BundleGames.Controllers
             return View(db.Games.ToList());
         }
 
-
-        public ActionResult AddGameToWishlist(int id)
-        { 
-            
-            db.Korisniks.Find(id).Korisnik_Wishlist.Wishlist_Games.Add(db.Games.Find(id));
-            db.SaveChanges();
-            return View();
-        }
         
+        public ActionResult AddGameToWishlist(int gameid, int userid)
+        {
+            AddToWishListModel model = new AddToWishListModel();
+            model.GameId = gameid;
+            model.KorisnikId = userid;
+            
+            
+            return View();
+                
+        }
+        [HttpPost]
+        public ActionResult AddGameToWishlist(AddToWishListModel model)
+        {
+            var user = db.Korisniks.FirstOrDefault(m=>m.Id == model.KorisnikId );
+            var game = db.Games.FirstOrDefault(z => z.Id == model.GameId);
+            user.Korisnik_Wishlist.Wishlist_Games.Add(game);
+            db.SaveChanges();
+            return View("ProfileShow","Korisniks", user.Id);
+        }
 
         // GET: Games/Details/5
         public ActionResult Details(int? id)

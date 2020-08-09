@@ -27,11 +27,29 @@ namespace BundleGames.Controllers
 
         public ActionResult ProfileShow(int? id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }else 
+            {
+                Korisnik korisnik = db.Korisniks.Where(c => c.Id == id).FirstOrDefault();
+                if (korisnik == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }else
+                {
+                    ViewBag.Username = korisnik.Username;
+                    return View(korisnik);
+                }
+                
+            }
             
 
-            return View();
+
+            
         }
 
+        
         // GET: Korisniks/Details/5
         public ActionResult Details(int? id)
         {
