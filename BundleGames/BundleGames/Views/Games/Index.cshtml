@@ -37,7 +37,7 @@
                             <h5 class="card-text text-success font-weight-bold">@item.Game_Cena$</h5>
                         }
 
-                        @Html.ActionLink("Add To Card", "Index", "ShoppingCarts", new { id=item.Id}, new { @class = " btn btn-success mt-2 " })
+                        @Html.ActionLink("Add To Cart", "Index", "ShoppingCarts", new { id=item.Id}, new { @class = " btn btn-success mt-2 " })
                         @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", new { id = item.Id, userid = Session["UserId"] }, new { @class = "btn btn-warning mt-2" })
                         
 

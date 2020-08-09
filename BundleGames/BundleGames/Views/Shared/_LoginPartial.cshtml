@@ -5,14 +5,22 @@
     
         @Html.AntiForgeryToken()
 
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                <button class="btn btn-outline-info">@Session["Username"]</button>
-            </li>
-            <li>
-                @Html.ActionLink("Log Out", "LogOut","Akaunt", null, new { @class="btn btn-outline-danger ml-3" })
-            </li>
-        </ul>
+<ul class="nav navbar-nav navbar-right">
+    <li class="nav-item">
+    
+        <img class="mr-3" style="width:45px;height:45px;" src="~/Logo/Cart.png" />
+   
+        
+        @Html.ActionLink("Shopping Cart", "Register", "Account", routeValues: null, htmlAttributes: new { id = "cartlink", @class = "btn btn-outline-success mr-4" })
+    </li>
+
+    <li class="nav-item">
+        <button class="btn btn-outline-info mt-1">@Session["Username"]</button>
+    </li>
+    <li class="nav-item">
+        @Html.ActionLink("Log Out", "LogOut", "Akaunt", null, new { @class = "btn btn-outline-danger ml-3 mt-1" })
+    </li>
+</ul>
     }
 
 else
