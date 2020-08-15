@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BundleGames.Models.ShoppingCart>
+﻿@model IEnumerable<BundleGames.Models.Game>
 
 @{
     ViewBag.Title = "Index";
@@ -25,7 +25,7 @@
                 <div class="row mt-5 no-gutters mt-2">
                     <div class="col-2">
 
-                        <img class="ml-1 mt-1" style="height:120px;width:180px;" src="@Html.DisplayFor(modelItem => item.UserId)" />
+                        <img class="ml-1 mt-1" style="height:120px;width:180px;" src="@Html.DisplayFor(modelItem => item.Game_Cena)" />
 
 
                     </div>
@@ -33,13 +33,13 @@
                         <div class="card-block px-2">
                             <h4 class="card-title ">@Html.ActionLink("ShoppingCartNAME", "ShoppingCarts", new { id = item.Id }, new { @class = "text-warning" })</h4>
 
-                            @if (item.UserId == 0)
+                            @if (item.Game_Cena == 0)
                             {
                                 <h5 class="card-text text-info font-weight-bold">Free To Play</h5>
                             }
                             else
                             {
-                                <h5 class="card-text text-success font-weight-bold">@item.UserId$</h5>
+                                <h5 class="card-text text-success font-weight-bold">@item.Game_Cena$</h5>
                             }
 
                             <a href="#" class="btn btn-success mt-2">Add To Card</a>

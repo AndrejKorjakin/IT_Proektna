@@ -16,14 +16,16 @@
         <h1 class="mt-5"></h1>
         <h1 class="text-warning btn btn-outline-info mt-5">
 
-            <label>Welcome: @ViewBag.Username </label>
+            <label>Welcome: @Session["Username"] </label>
+            <br />
+            <label>Your games:</label>
         </h1>
     </head>
 }
 
 <body>
 
-    @foreach (var item in Model.Korisnik_Wishlist.Wishlist_Games)
+    @foreach (var item in Model.Korisnik_Games)
     {
 
         <div class="card mt-5 pozadina-index">

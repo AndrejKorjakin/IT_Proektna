@@ -151,3 +151,12 @@ F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\Bundl
 F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.userdatabasecreated.resources
 F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.korisnikgamesintovirtual.resources
 F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.loginregisterpartialviewfixed.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.IsAdmininkorisnikadded.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.isadminviewbag.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.tagsadded1.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.tagsupdated.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.imageupload.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.revertimageupload.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.addgametouserlistadded.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.addtocartaddded.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.addtocartworking.resources

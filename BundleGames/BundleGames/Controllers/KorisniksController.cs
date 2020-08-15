@@ -22,7 +22,19 @@ namespace BundleGames.Controllers
         // GET: Korisniks
         public ActionResult Index()
         {
+           
             return View(db.Korisniks.ToList());
+        }
+
+        public ActionResult MakeAdmin(int? id)
+        {
+            if (id != null)
+            {
+                db.Korisniks.Find(id).IsAdmin = 1;
+                return View();
+            }
+            else
+                return new HttpStatusCodeResult(HttpStatusCode.NotFound);
         }
 
         public ActionResult ProfileShow(int? id)
@@ -39,6 +51,7 @@ namespace BundleGames.Controllers
                 }else
                 {
                     ViewBag.Username = korisnik.Username;
+                    
                     return View(korisnik);
                 }
                 

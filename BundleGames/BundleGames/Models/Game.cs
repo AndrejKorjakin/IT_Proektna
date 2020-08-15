@@ -31,8 +31,11 @@ namespace BundleGames.Models
         public string Publisher { get; set; }
         [Required]
         public string Developer { get; set; }
-        
-        public string Tags { get; set; }
+
+        public List<string> Tags = new List<string>
+        {
+            "Action","Adventure","Shooting","Horror"
+        };
 
        
 

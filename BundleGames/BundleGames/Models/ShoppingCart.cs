@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BundleGames.Migrations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,7 @@ namespace BundleGames.Models
     {
         public int Id { get; set; }
         public int UserId { get; set; }
+        public int GameId { get; set; }
 
         public List<Game> GamesForBuying { get; set; }
 
@@ -16,6 +18,8 @@ namespace BundleGames.Models
         {
             GamesForBuying = new List<Game>();
         }
+
+        
 
     }
 }

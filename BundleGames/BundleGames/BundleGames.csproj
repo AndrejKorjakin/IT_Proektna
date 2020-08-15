@@ -26,7 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>3.8</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>3.9</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,6 +36,19 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
+    <TypeScriptModuleKind />
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -358,10 +371,48 @@
     <Compile Include="Migrations\202008091525289_loginregisterpartialviewfixed.Designer.cs">
       <DependentUpon>202008091525289_loginregisterpartialviewfixed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008091928017_IsAdmininkorisnikadded.cs" />
+    <Compile Include="Migrations\202008091928017_IsAdmininkorisnikadded.Designer.cs">
+      <DependentUpon>202008091928017_IsAdmininkorisnikadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008092013020_isadminviewbag.cs" />
+    <Compile Include="Migrations\202008092013020_isadminviewbag.Designer.cs">
+      <DependentUpon>202008092013020_isadminviewbag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008092025443_tagsadded1.cs" />
+    <Compile Include="Migrations\202008092025443_tagsadded1.Designer.cs">
+      <DependentUpon>202008092025443_tagsadded1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008092044225_tagsupdated.cs" />
+    <Compile Include="Migrations\202008092044225_tagsupdated.Designer.cs">
+      <DependentUpon>202008092044225_tagsupdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008131350288_imageupload.cs" />
+    <Compile Include="Migrations\202008131350288_imageupload.Designer.cs">
+      <DependentUpon>202008131350288_imageupload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008131356208_revertimageupload.cs" />
+    <Compile Include="Migrations\202008131356208_revertimageupload.Designer.cs">
+      <DependentUpon>202008131356208_revertimageupload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008131529448_addgametouserlistadded.cs" />
+    <Compile Include="Migrations\202008131529448_addgametouserlistadded.Designer.cs">
+      <DependentUpon>202008131529448_addgametouserlistadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008151030333_addtocartaddded.cs" />
+    <Compile Include="Migrations\202008151030333_addtocartaddded.Designer.cs">
+      <DependentUpon>202008151030333_addtocartaddded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008151321072_addtocartworking.cs" />
+    <Compile Include="Migrations\202008151321072_addtocartworking.Designer.cs">
+      <DependentUpon>202008151321072_addtocartworking.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AddGameToUserListModel.cs" />
     <Compile Include="Models\AddToWishListModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Controllers\Item.cs" />
     <Compile Include="Models\Korisnik.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Game.cs" />
@@ -808,6 +859,8 @@
     <Content Include="Views\Akaunt\LoggedIn.cshtml" />
     <Content Include="Views\Akaunt\Register.cshtml" />
     <Content Include="Views\Akaunt\Login.cshtml" />
+    <Content Include="Views\ShoppingCarts\Cart.cshtml" />
+    <Content Include="Views\ShoppingCarts\Empty.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -953,6 +1006,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008091525289_loginregisterpartialviewfixed.resx">
       <DependentUpon>202008091525289_loginregisterpartialviewfixed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008091928017_IsAdmininkorisnikadded.resx">
+      <DependentUpon>202008091928017_IsAdmininkorisnikadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008092013020_isadminviewbag.resx">
+      <DependentUpon>202008092013020_isadminviewbag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008092025443_tagsadded1.resx">
+      <DependentUpon>202008092025443_tagsadded1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008092044225_tagsupdated.resx">
+      <DependentUpon>202008092044225_tagsupdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008131350288_imageupload.resx">
+      <DependentUpon>202008131350288_imageupload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008131356208_revertimageupload.resx">
+      <DependentUpon>202008131356208_revertimageupload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008131529448_addgametouserlistadded.resx">
+      <DependentUpon>202008131529448_addgametouserlistadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008151030333_addtocartaddded.resx">
+      <DependentUpon>202008151030333_addtocartaddded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008151321072_addtocartworking.resx">
+      <DependentUpon>202008151321072_addtocartworking.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

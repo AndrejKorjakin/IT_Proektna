@@ -15,7 +15,7 @@
 </head>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Register","Akaunt",FormMethod.Post, new { enctype ="multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     if (ViewBag.Message != null)
@@ -72,7 +72,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2 text-white" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { placeholder = "Confirm Password...", @class = "form-control" } })
+                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { placeholder = "Enter ProfileURL...", @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
             </div>
         </div>

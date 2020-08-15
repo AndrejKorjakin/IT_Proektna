@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using System.Web.Mvc;
 using BundleGames.Models;
@@ -17,7 +18,68 @@ namespace BundleGames.Controllers
         // GET: ShoppingCarts
         public ActionResult Index()
         {
-            return View(db.ShoppingCarts.ToList());
+            
+            return View();
+        }
+        public ActionResult Cart()
+        {
+
+            return View();
+        }
+        private int isExisting(int? id)
+        {
+            List<Item> cart = (List<Item>)Session["cart"];
+
+            for(int i = 0; i < cart.Count; i++)
+            {
+                if (cart[i].game.Id == id)
+                    return i;
+                
+                
+            }
+            return -1;
+        }
+
+        public ActionResult OrderNow(int? id)
+        {
+
+            if (id == null)
+            {
+                return View("Empty");
+            }
+            if (Session["cart"] == null)
+            {
+                List<Item> cart = new List<Item>();
+                cart.Add(new Item(db.Games.Find(id)));
+                Session["cart"] = cart;
+            }
+            else
+            {
+                List<Item> cart = (List<Item>)Session["cart"];
+                int index = isExisting(id);
+                if(index==-1)
+                cart.Add(new Item(db.Games.Find(id)));
+                
+                Session["cart"] = cart;
+            }
+
+            return View("Cart");
+
+            
+        }
+
+        public ActionResult RemoveFromCart(int? id)
+        {
+
+            List<Item> cart = (List<Item>)Session["cart"];
+            foreach(var item in cart)
+            {
+                if (item.game.Id == id)
+                    cart.Remove(item);
+            }
+
+            Session["cart"] = cart;
+            return Redirect("Cart");
         }
 
         // GET: ShoppingCarts/Details/5

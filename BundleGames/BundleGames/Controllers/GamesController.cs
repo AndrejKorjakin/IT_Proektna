@@ -22,7 +22,8 @@ namespace BundleGames.Controllers
         // GET: Games
         public ActionResult Index()
         {
-            return View(db.Games.ToList());
+            
+             return View(db.Games.ToList());
         }
         public ActionResult Wishlist()
         {
@@ -48,6 +49,26 @@ namespace BundleGames.Controllers
             user.Korisnik_Wishlist.Wishlist_Games.Add(game);
             db.SaveChanges();
             return View("ProfileShow","Korisniks", user.Id);
+        }
+
+        public ActionResult AddGameToUserList(int? gameid)
+        {
+            AddGameToUserListModel model = new AddGameToUserListModel();
+            model.GameId = 8;
+            model.UserId = 18;
+
+            return View();
+
+        }
+
+        [HttpPost]
+        public ActionResult AddGameToUserList(AddGameToUserListModel model)
+        {
+            var user = db.Korisniks.FirstOrDefault(m => m.Id == model.UserId);
+            var game = db.Games.FirstOrDefault(z => z.Id == model.GameId);
+            user.Korisnik_Games.Add(game);
+            db.SaveChanges();
+            return View();
         }
 
         // GET: Games/Details/5
@@ -76,7 +97,7 @@ namespace BundleGames.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Game_Name,Game_Image,Game_Cena,Game_Info,Release_Date,Publisher,Developer")] Game game)
+        public ActionResult Create([Bind(Include = "Id,Game_Name,Game_Image,Game_Cena,Game_Info,Release_Date,Publisher,Developer,Tags")] Game game)
         {
             if (ModelState.IsValid)
             {
@@ -109,7 +130,7 @@ namespace BundleGames.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Game_Name,Game_Image,Game_Cena,Game_Info,Release_Date,Publisher,Developer")] Game game)
+        public ActionResult Edit([Bind(Include = "Id,Game_Name,Game_Image,Game_Cena,Game_Info,Release_Date,Publisher,Developer,Tags")] Game game)
         {
             if (ModelState.IsValid)
             {
