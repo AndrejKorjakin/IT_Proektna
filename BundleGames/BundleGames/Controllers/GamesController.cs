@@ -25,14 +25,46 @@ namespace BundleGames.Controllers
             
              return View(db.Games.ToList());
         }
-        public ActionResult Wishlist()
+        public ActionResult WishListView()
         {
-            return View(db.Games.ToList());
+            return View();
+        }
+        public ActionResult ProfileShow(int? id)
+        {
+            var user = db.Korisniks.FirstOrDefault(k => k.Id == id);
+            return View(user.Korisnik_Games.ToList());
+
         }
 
+        public ActionResult AddGameToWishlist(int? gameid, int? userid)
+        {
+            if(gameid == null || userid == null)
+            {
+                var UserId = int.Parse(Session["UserId"].ToString());
+                return View(db.Korisniks.Find(UserId));
+            }
+            var user = db.Korisniks.Find(userid);
+            var game = db.Games.Find(gameid);
+            if (!user.WishlistGames.Any(x => x.GameId == gameid))
+            {
+                var wishlistgame = new WishlistGame()
+                {
+                    KorisnikId = (int)userid,
+                    GameId = (int)gameid
+                };
+                user.WishlistGames.Add(wishlistgame);
+                db.SaveChanges();
+            }
+            return View(user);
+
+
+        }
+
+        /* 
         
         public ActionResult AddGameToWishlist(int gameid, int userid)
         {
+            
             AddToWishListModel model = new AddToWishListModel();
             model.GameId = gameid;
             model.KorisnikId = userid;
@@ -48,28 +80,24 @@ namespace BundleGames.Controllers
             var game = db.Games.FirstOrDefault(z => z.Id == model.GameId);
             user.Korisnik_Wishlist.Wishlist_Games.Add(game);
             db.SaveChanges();
-            return View("ProfileShow","Korisniks", user.Id);
+            return View("ProfileShow");
         }
+        */
 
-        public ActionResult AddGameToUserList(int? gameid)
+
+        public ActionResult CheckOut(int gameid, int userid)
         {
-            AddGameToUserListModel model = new AddGameToUserListModel();
-            model.GameId = 8;
-            model.UserId = 18;
+            var user = db.Korisniks.Find(userid);
+            var game = db.Games.Find(gameid);
 
-            return View();
-
-        }
-
-        [HttpPost]
-        public ActionResult AddGameToUserList(AddGameToUserListModel model)
-        {
-            var user = db.Korisniks.FirstOrDefault(m => m.Id == model.UserId);
-            var game = db.Games.FirstOrDefault(z => z.Id == model.GameId);
-            user.Korisnik_Games.Add(game);
             db.SaveChanges();
             return View();
         }
+            
+
+        
+
+        
 
         // GET: Games/Details/5
         public ActionResult Details(int? id)
@@ -142,25 +170,13 @@ namespace BundleGames.Controllers
         }
 
         // GET: Games/Delete/5
-        public ActionResult Delete(int? id)
-        {
-
-            Game listing = db.Games.Find(id);
-            db.Games.Remove(listing);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-
-        }
         
-        
-
-
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult Delete(int id)
         {
             Game game = db.Games.Find(id);
             db.Games.Remove(game);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return new EmptyResult();
         }
 
         protected override void Dispose(bool disposing)

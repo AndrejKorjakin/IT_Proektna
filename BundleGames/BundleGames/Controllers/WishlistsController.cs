@@ -27,7 +27,7 @@ namespace BundleGames.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Wishlist wishlist = db.Wishlists.Find(id);
+            WishlistGame wishlist = db.Wishlists.Find(id);
             if (wishlist == null)
             {
                 return HttpNotFound();
@@ -46,7 +46,7 @@ namespace BundleGames.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Wishlist_Name")] Wishlist wishlist)
+        public ActionResult Create([Bind(Include = "Id,Wishlist_Name")] WishlistGame wishlist)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +65,7 @@ namespace BundleGames.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Wishlist wishlist = db.Wishlists.Find(id);
+            WishlistGame wishlist = db.Wishlists.Find(id);
             if (wishlist == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace BundleGames.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Wishlist_Name")] Wishlist wishlist)
+        public ActionResult Edit([Bind(Include = "Id,Wishlist_Name")] WishlistGame wishlist)
         {
             if (ModelState.IsValid)
             {
@@ -90,29 +90,14 @@ namespace BundleGames.Controllers
         }
 
         // GET: Wishlists/Delete/5
-        public ActionResult Delete(int? id)
+       public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Wishlist wishlist = db.Wishlists.Find(id);
-            if (wishlist == null)
-            {
-                return HttpNotFound();
-            }
-            return View(wishlist);
-        }
-
-        // POST: Wishlists/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Wishlist wishlist = db.Wishlists.Find(id);
-            db.Wishlists.Remove(wishlist);
+            
+            var userid = int.Parse(Session["UserId"].ToString());
+            WishlistGame wlgame = db.Wishlists.FirstOrDefault(x => x.GameId == id && x.KorisnikId == userid);
+            db.Wishlists.Remove(wlgame);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return new EmptyResult();
         }
 
         protected override void Dispose(bool disposing)

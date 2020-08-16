@@ -31,10 +31,9 @@ namespace BundleGames.Models
         [Range(10,99)]
         public int Age { get; set; }
         public int IsAdmin = 0;
-        public virtual ICollection<Game> Korisnik_Games { get; set; }
+        public List<Game> Korisnik_Games { get; } = new List<Game>();
 
-        public Wishlist Korisnik_Wishlist { get; set; }
-
-        
+        public virtual ICollection<WishlistGame> WishlistGames { get; } = new List<WishlistGame>();
+     
     }
 }

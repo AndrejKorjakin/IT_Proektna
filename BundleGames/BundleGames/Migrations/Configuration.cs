@@ -9,8 +9,7 @@ namespace BundleGames.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "BundleGames.Models.ApplicationDbContext";
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(BundleGames.Models.ApplicationDbContext context)

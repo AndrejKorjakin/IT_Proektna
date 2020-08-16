@@ -6,26 +6,28 @@
 @using (Html.BeginForm("ProfileShow", "Korisniks"))
 {
 
-
-    <head>
-        <style>
-            body {
-                background: -webkit-radial-gradient( #0b2a3c, #1b4456);
-            }
-        </style>
+<head>
+    <style>
+        body {
+            background: -webkit-radial-gradient( #0b2a3c, #1b4456);
+        }
+    </style>
+</head>
         <h1 class="mt-5"></h1>
         <h1 class="text-warning btn btn-outline-info mt-5">
-
             <label>Welcome: @Session["Username"] </label>
             <br />
             <label>Your games:</label>
         </h1>
-    </head>
+    
 }
 
 <body>
+    @if (Session["Username"] != null)
+    {
 
-    @foreach (var item in Model.Korisnik_Games)
+    
+    foreach (var item in Model.Korisnik_Games)
     {
 
         <div class="card mt-5 pozadina-index">
@@ -74,8 +76,13 @@
             </div>
         </div>
     }
-
+    }
+    else
+    {
+        
+    }
 </body>
+    
 @*
     @section scripts{
         <script>

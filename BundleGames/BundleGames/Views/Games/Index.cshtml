@@ -8,77 +8,91 @@
         body {
             background: -webkit-radial-gradient( #0b2a3c, #1b4456);
         }
+
         .pozadina-index {
             background: -webkit-radial-gradient( #283f63, #1b4456);
         }
     </style>
+    
 </head>
+<br />
+<br />
+<br />
+<br />
 <body>
-   
-    @foreach (var item in Model)
-    {
 
-        <div class="card mt-5 pozadina-index">
-            <div class="row mt-5 no-gutters mt-2">
-                <div class="col-2">
+    <div class="container">
 
-                    <img class="ml-1 mt-1" style="height:120px;width:180px;" src="@Html.DisplayFor(modelItem => item.Game_Image)" />
-
-
-                </div>
-                <div class="col mt-1">
-                    <div class="card-block px-2">
-                        <h4 class="card-title ">@Html.ActionLink(item.Game_Name, "Details", new { id = item.Id }, new { @class = "text-warning" })</h4>
-
-                        @if (item.Game_Cena == 0)
-                        {
-                            <h5 class="card-text text-success font-weight-bold">Free To Play</h5>
-                        }
-                        else
-                        {
-                            <h5 class="card-text text-success font-weight-bold">@item.Game_Cena$</h5>
-                        }
-                        @if (ViewBag.IsAdmin != 0)
-                        {
-                            @Html.ActionLink("Add To Cart", "OrderNow", "ShoppingCarts", new { id = item.Id }, new { @class = " btn btn-success mt-2 " })
-                        }
-
-                        @Html.ActionLink("Add To List", "AddGameToUserList", new { id = item.Id }, new { @class = "btn btn-warning mt-2" })
-
-
-                        @*
-           @if (User.IsInRole("Administrator"))
+        @foreach (var item in Model)
         {
-            <a>@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning mt-2" })</a>
-            <a>@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger mt-2" })</a>
-        }
-                        *@
+
+            <div class="card mt-3 pozadina-index">
+                <div class="row mt-3 no-gutters mt-2">
+                    <div class="col-2">
+
+                        <img class="ml-1 mt-1" style="height:120px;width:180px;" src="@Html.DisplayFor(modelItem => item.Game_Image)" />
 
 
-                        <a>@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-info mt-2" })</a>
-                        <a class="btn btn-link btn-danger js-delete mt-2 text-white" data-id="@item.Id">Delete</a>
-                        <a>@Html.ActionLink("Add To Weekly Special", "Index", "PopustGames", new { id = item.Id }, new { @class = "btn btn-secondary mt-2" })</a>
+                    </div>
+                    <div class="col mt-1">
+                        <div class="card-block px-4">
+                            <h4 class="card-title ">@Html.ActionLink(item.Game_Name, "Details", new { id = item.Id }, new { @class = "text-warning" })</h4>
+
+                            @if (item.Game_Cena == 0)
+                            {
+                                <h5 class="card-text text-success font-weight-bold">Free To Play</h5>
+                            }
+                            else
+                            {
+                                <h5 class="card-text text-success font-weight-bold">@item.Game_Cena$</h5>
+                            }
+                            @if (ViewBag.IsAdmin != 0)
+                            {
+                                @Html.ActionLink("Add To Cart", "OrderNow", "ShoppingCarts", new { id = item.Id }, new { @class = " btn btn-success mt-2 " })
+                            }
+
+                            @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", new { gameid = item.Id, userid = Session["UserId"] }, new { @class = "btn btn-warning mt-2" })
+
+
+                            @if (Session["Username"] != null)
+                            {
+                                if (Session["Username"].ToString() == "admin")
+
+                                {
+                                    <a>@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-info mt-2" })</a>
+                                    <a class="btn btn-link btn-danger js-delete mt-2 text-white" data-id="@item.Id">Delete</a>
+                                    <a>@Html.ActionLink("Add To Weekly Special", "Index", "PopustGames", new { id = item.Id }, new { @class = "btn btn-secondary mt-2" })</a>
+                                }
+                            }
+                        </div>
+                    </div>
+                    @*
+                        <div class="card-footer w-100 text-muted bg-dark mt-3">
+                            <label>@item.Tags</label>
+                        </div>
+                    *@
+                    <div class="card-footer w-100 text-muted bg-dark mt-3">
+                        <label>
+                            <span class="text-info">TAGS </span>
+                            <span class="btn-sm btn-primary">Adventure</span>
+                            <span class="btn-sm btn-primary">Action</span>
+                            <span class="btn-sm btn-primary">First-Person</span>
+                            <span class="btn-sm btn-primary">MOBA</span>
+                            <span class="btn-sm btn-primary">Shooting</span>
+                            <span class="btn-sm btn-primary">Indie</span>
+
+                        </label>
 
                     </div>
                 </div>
 
-                <div class="card-footer w-100 text-muted bg-dark mt-3">
-                    <label>
-                        <span class="text-info">TAGS </span>
-                        <span class="btn-sm btn-primary">Adventure</span>
-                        <span class="btn-sm btn-primary">Action</span>
-                        <span class="btn-sm btn-primary">First-Person</span>
-                        <span class="btn-sm btn-primary">MOBA</span>
-                        <span class="btn-sm btn-primary">Shooting</span>
-                        <span class="btn-sm btn-primary">Indie</span>
-                    </label>
-                    
-                </div>
             </div>
-        </div>
-    }
-
+        }
+    </div>
+    <br />
+    <br />  
 </body>
+
 @section scripts {
     <script>
         $(".js-delete").click(function () {
@@ -90,11 +104,12 @@
                         method: "GET",
                         url: "/Games/Delete/"+button.attr("data-id"),
                         success: function () {
-                            table.row(button.parents("tr").remove().draw());
+                           button.parent().parent().parent().parent().remove();
                         }
                     })
                 }
             })
         })
     </script>
+
     }

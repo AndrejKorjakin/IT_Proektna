@@ -195,221 +195,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007211302571_InitialCreate.cs" />
-    <Compile Include="Migrations\202007211302571_InitialCreate.Designer.cs">
-      <DependentUpon>202007211302571_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202008161209444_Initial.cs" />
+    <Compile Include="Migrations\202008161209444_Initial.Designer.cs">
+      <DependentUpon>202008161209444_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007211458369_initial.cs" />
-    <Compile Include="Migrations\202007211458369_initial.Designer.cs">
-      <DependentUpon>202007211458369_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007211521239_storeadded.cs" />
-    <Compile Include="Migrations\202007211521239_storeadded.Designer.cs">
-      <DependentUpon>202007211521239_storeadded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007211535474_addedkositnikwishlistgame.cs" />
-    <Compile Include="Migrations\202007211535474_addedkositnikwishlistgame.Designer.cs">
-      <DependentUpon>202007211535474_addedkositnikwishlistgame.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007212113236_tagsadded.cs" />
-    <Compile Include="Migrations\202007212113236_tagsadded.Designer.cs">
-      <DependentUpon>202007212113236_tagsadded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007212124417_gamecenaadded.cs" />
-    <Compile Include="Migrations\202007212124417_gamecenaadded.Designer.cs">
-      <DependentUpon>202007212124417_gamecenaadded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007212135343_releasedateadded.cs" />
-    <Compile Include="Migrations\202007212135343_releasedateadded.Designer.cs">
-      <DependentUpon>202007212135343_releasedateadded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007230913214_changedandaddedinmodels.cs" />
-    <Compile Include="Migrations\202007230913214_changedandaddedinmodels.Designer.cs">
-      <DependentUpon>202007230913214_changedandaddedinmodels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007230926531_controllesandviewsadded.cs" />
-    <Compile Include="Migrations\202007230926531_controllesandviewsadded.Designer.cs">
-      <DependentUpon>202007230926531_controllesandviewsadded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007231059580_addedsomething1.cs" />
-    <Compile Include="Migrations\202007231059580_addedsomething1.Designer.cs">
-      <DependentUpon>202007231059580_addedsomething1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007231439377_addedcontactpage.cs" />
-    <Compile Include="Migrations\202007231439377_addedcontactpage.Designer.cs">
-      <DependentUpon>202007231439377_addedcontactpage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007231556375_frontpageupdated.cs" />
-    <Compile Include="Migrations\202007231556375_frontpageupdated.Designer.cs">
-      <DependentUpon>202007231556375_frontpageupdated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007231603228_editpagefixed.cs" />
-    <Compile Include="Migrations\202007231603228_editpagefixed.Designer.cs">
-      <DependentUpon>202007231603228_editpagefixed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007241553298_addedbootbox.cs" />
-    <Compile Include="Migrations\202007241553298_addedbootbox.Designer.cs">
-      <DependentUpon>202007241553298_addedbootbox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007241627235_popustgamesadded.cs" />
-    <Compile Include="Migrations\202007241627235_popustgamesadded.Designer.cs">
-      <DependentUpon>202007241627235_popustgamesadded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007241628278_popustgamesaddedfinal.cs" />
-    <Compile Include="Migrations\202007241628278_popustgamesaddedfinal.Designer.cs">
-      <DependentUpon>202007241628278_popustgamesaddedfinal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007251048536_registerwithuseradded.cs" />
-    <Compile Include="Migrations\202007251048536_registerwithuseradded.Designer.cs">
-      <DependentUpon>202007251048536_registerwithuseradded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007251054545_sometin.cs" />
-    <Compile Include="Migrations\202007251054545_sometin.Designer.cs">
-      <DependentUpon>202007251054545_sometin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007251107230_registerloginwithusernameadded.cs" />
-    <Compile Include="Migrations\202007251107230_registerloginwithusernameadded.Designer.cs">
-      <DependentUpon>202007251107230_registerloginwithusernameadded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007261043139_addedshoppingcart.cs" />
-    <Compile Include="Migrations\202007261043139_addedshoppingcart.Designer.cs">
-      <DependentUpon>202007261043139_addedshoppingcart.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007261111162_26julydone.cs" />
-    <Compile Include="Migrations\202007261111162_26julydone.Designer.cs">
-      <DependentUpon>202007261111162_26julydone.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007262047265_changeddetailsbuttons.cs" />
-    <Compile Include="Migrations\202007262047265_changeddetailsbuttons.Designer.cs">
-      <DependentUpon>202007262047265_changeddetailsbuttons.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007280923117_shoppingcartcontrolleradded.cs" />
-    <Compile Include="Migrations\202007280923117_shoppingcartcontrolleradded.Designer.cs">
-      <DependentUpon>202007280923117_shoppingcartcontrolleradded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007281035025_addtowishlistgameadded.cs" />
-    <Compile Include="Migrations\202007281035025_addtowishlistgameadded.Designer.cs">
-      <DependentUpon>202007281035025_addtowishlistgameadded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007292332262_usernamechanged.cs" />
-    <Compile Include="Migrations\202007292332262_usernamechanged.Designer.cs">
-      <DependentUpon>202007292332262_usernamechanged.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007311953109_wishlistupdated.cs" />
-    <Compile Include="Migrations\202007311953109_wishlistupdated.Designer.cs">
-      <DependentUpon>202007311953109_wishlistupdated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007311959038_addtowishlistnotworking.cs" />
-    <Compile Include="Migrations\202007311959038_addtowishlistnotworking.Designer.cs">
-      <DependentUpon>202007311959038_addtowishlistnotworking.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008030935237_addtocardandaddtowishlistlinksupated.cs" />
-    <Compile Include="Migrations\202008030935237_addtocardandaddtowishlistlinksupated.Designer.cs">
-      <DependentUpon>202008030935237_addtocardandaddtowishlistlinksupated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008040913576_popustgamessomethingadded.cs" />
-    <Compile Include="Migrations\202008040913576_popustgamessomethingadded.Designer.cs">
-      <DependentUpon>202008040913576_popustgamessomethingadded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008041339267_addtowishmoedelchanged.cs" />
-    <Compile Include="Migrations\202008041339267_addtowishmoedelchanged.Designer.cs">
-      <DependentUpon>202008041339267_addtowishmoedelchanged.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008041708304_userasdasd.cs" />
-    <Compile Include="Migrations\202008041708304_userasdasd.Designer.cs">
-      <DependentUpon>202008041708304_userasdasd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008041744368_wishlistadded.cs" />
-    <Compile Include="Migrations\202008041744368_wishlistadded.Designer.cs">
-      <DependentUpon>202008041744368_wishlistadded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008050838077_wishlistdeleteaddded.cs" />
-    <Compile Include="Migrations\202008050838077_wishlistdeleteaddded.Designer.cs">
-      <DependentUpon>202008050838077_wishlistdeleteaddded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008050850262_userregisterchanged.cs" />
-    <Compile Include="Migrations\202008050850262_userregisterchanged.Designer.cs">
-      <DependentUpon>202008050850262_userregisterchanged.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008050926541_myloginandregisteradded.cs" />
-    <Compile Include="Migrations\202008050926541_myloginandregisteradded.Designer.cs">
-      <DependentUpon>202008050926541_myloginandregisteradded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008050945434_loginregisterupdated.cs" />
-    <Compile Include="Migrations\202008050945434_loginregisterupdated.Designer.cs">
-      <DependentUpon>202008050945434_loginregisterupdated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008050947218_dbcontextakaunt.cs" />
-    <Compile Include="Migrations\202008050947218_dbcontextakaunt.Designer.cs">
-      <DependentUpon>202008050947218_dbcontextakaunt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008050955468_ApplicationDbContextchanged.cs" />
-    <Compile Include="Migrations\202008050955468_ApplicationDbContextchanged.Designer.cs">
-      <DependentUpon>202008050955468_ApplicationDbContextchanged.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008051017114_korisnikstouseraccoutns.cs" />
-    <Compile Include="Migrations\202008051017114_korisnikstouseraccoutns.Designer.cs">
-      <DependentUpon>202008051017114_korisnikstouseraccoutns.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008051030520_registerloginupdated.cs" />
-    <Compile Include="Migrations\202008051030520_registerloginupdated.Designer.cs">
-      <DependentUpon>202008051030520_registerloginupdated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008051338257_korisnikID.cs" />
-    <Compile Include="Migrations\202008051338257_korisnikID.Designer.cs">
-      <DependentUpon>202008051338257_korisnikID.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008051457318_userdatabasecreated.cs" />
-    <Compile Include="Migrations\202008051457318_userdatabasecreated.Designer.cs">
-      <DependentUpon>202008051457318_userdatabasecreated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008091304443_korisnikgamesintovirtual.cs" />
-    <Compile Include="Migrations\202008091304443_korisnikgamesintovirtual.Designer.cs">
-      <DependentUpon>202008091304443_korisnikgamesintovirtual.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008091525289_loginregisterpartialviewfixed.cs" />
-    <Compile Include="Migrations\202008091525289_loginregisterpartialviewfixed.Designer.cs">
-      <DependentUpon>202008091525289_loginregisterpartialviewfixed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008091928017_IsAdmininkorisnikadded.cs" />
-    <Compile Include="Migrations\202008091928017_IsAdmininkorisnikadded.Designer.cs">
-      <DependentUpon>202008091928017_IsAdmininkorisnikadded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008092013020_isadminviewbag.cs" />
-    <Compile Include="Migrations\202008092013020_isadminviewbag.Designer.cs">
-      <DependentUpon>202008092013020_isadminviewbag.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008092025443_tagsadded1.cs" />
-    <Compile Include="Migrations\202008092025443_tagsadded1.Designer.cs">
-      <DependentUpon>202008092025443_tagsadded1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008092044225_tagsupdated.cs" />
-    <Compile Include="Migrations\202008092044225_tagsupdated.Designer.cs">
-      <DependentUpon>202008092044225_tagsupdated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008131350288_imageupload.cs" />
-    <Compile Include="Migrations\202008131350288_imageupload.Designer.cs">
-      <DependentUpon>202008131350288_imageupload.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008131356208_revertimageupload.cs" />
-    <Compile Include="Migrations\202008131356208_revertimageupload.Designer.cs">
-      <DependentUpon>202008131356208_revertimageupload.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008131529448_addgametouserlistadded.cs" />
-    <Compile Include="Migrations\202008131529448_addgametouserlistadded.Designer.cs">
-      <DependentUpon>202008131529448_addgametouserlistadded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008151030333_addtocartaddded.cs" />
-    <Compile Include="Migrations\202008151030333_addtocartaddded.Designer.cs">
-      <DependentUpon>202008151030333_addtocartaddded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008151321072_addtocartworking.cs" />
-    <Compile Include="Migrations\202008151321072_addtocartworking.Designer.cs">
-      <DependentUpon>202008151321072_addtocartworking.cs</DependentUpon>
+    <Compile Include="Migrations\202008161537125_addtowishlistfinished.cs" />
+    <Compile Include="Migrations\202008161537125_addtowishlistfinished.Designer.cs">
+      <DependentUpon>202008161537125_addtowishlistfinished.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AddGameToUserListModel.cs" />
     <Compile Include="Models\AddToWishListModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Controllers\Item.cs" />
@@ -419,7 +214,7 @@
     <Compile Include="Models\PopustGames.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Models\Store.cs" />
-    <Compile Include="Models\Wishlist.cs" />
+    <Compile Include="Models\WishlistGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -855,12 +650,13 @@
     <Content Include="Views\Stores\Edit.cshtml" />
     <Content Include="Views\Stores\Index.cshtml" />
     <Content Include="Views\Korisniks\ProfileShow.cshtml" />
-    <Content Include="Views\Games\Wishlist.cshtml" />
+    <Content Include="Views\Korisniks\Wishlist.cshtml" />
     <Content Include="Views\Akaunt\LoggedIn.cshtml" />
     <Content Include="Views\Akaunt\Register.cshtml" />
     <Content Include="Views\Akaunt\Login.cshtml" />
     <Content Include="Views\ShoppingCarts\Cart.cshtml" />
     <Content Include="Views\ShoppingCarts\Empty.cshtml" />
+    <Content Include="Views\Games\WishListView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -875,164 +671,11 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202007211302571_InitialCreate.resx">
-      <DependentUpon>202007211302571_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008161209444_Initial.resx">
+      <DependentUpon>202008161209444_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007211458369_initial.resx">
-      <DependentUpon>202007211458369_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007211521239_storeadded.resx">
-      <DependentUpon>202007211521239_storeadded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007211535474_addedkositnikwishlistgame.resx">
-      <DependentUpon>202007211535474_addedkositnikwishlistgame.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007212113236_tagsadded.resx">
-      <DependentUpon>202007212113236_tagsadded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007212124417_gamecenaadded.resx">
-      <DependentUpon>202007212124417_gamecenaadded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007212135343_releasedateadded.resx">
-      <DependentUpon>202007212135343_releasedateadded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007230913214_changedandaddedinmodels.resx">
-      <DependentUpon>202007230913214_changedandaddedinmodels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007230926531_controllesandviewsadded.resx">
-      <DependentUpon>202007230926531_controllesandviewsadded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007231059580_addedsomething1.resx">
-      <DependentUpon>202007231059580_addedsomething1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007231439377_addedcontactpage.resx">
-      <DependentUpon>202007231439377_addedcontactpage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007231556375_frontpageupdated.resx">
-      <DependentUpon>202007231556375_frontpageupdated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007231603228_editpagefixed.resx">
-      <DependentUpon>202007231603228_editpagefixed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007241553298_addedbootbox.resx">
-      <DependentUpon>202007241553298_addedbootbox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007241627235_popustgamesadded.resx">
-      <DependentUpon>202007241627235_popustgamesadded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007241628278_popustgamesaddedfinal.resx">
-      <DependentUpon>202007241628278_popustgamesaddedfinal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007251048536_registerwithuseradded.resx">
-      <DependentUpon>202007251048536_registerwithuseradded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007251054545_sometin.resx">
-      <DependentUpon>202007251054545_sometin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007251107230_registerloginwithusernameadded.resx">
-      <DependentUpon>202007251107230_registerloginwithusernameadded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007261043139_addedshoppingcart.resx">
-      <DependentUpon>202007261043139_addedshoppingcart.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007261111162_26julydone.resx">
-      <DependentUpon>202007261111162_26julydone.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007262047265_changeddetailsbuttons.resx">
-      <DependentUpon>202007262047265_changeddetailsbuttons.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007280923117_shoppingcartcontrolleradded.resx">
-      <DependentUpon>202007280923117_shoppingcartcontrolleradded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007281035025_addtowishlistgameadded.resx">
-      <DependentUpon>202007281035025_addtowishlistgameadded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007292332262_usernamechanged.resx">
-      <DependentUpon>202007292332262_usernamechanged.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007311953109_wishlistupdated.resx">
-      <DependentUpon>202007311953109_wishlistupdated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007311959038_addtowishlistnotworking.resx">
-      <DependentUpon>202007311959038_addtowishlistnotworking.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008030935237_addtocardandaddtowishlistlinksupated.resx">
-      <DependentUpon>202008030935237_addtocardandaddtowishlistlinksupated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008040913576_popustgamessomethingadded.resx">
-      <DependentUpon>202008040913576_popustgamessomethingadded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008041339267_addtowishmoedelchanged.resx">
-      <DependentUpon>202008041339267_addtowishmoedelchanged.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008041708304_userasdasd.resx">
-      <DependentUpon>202008041708304_userasdasd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008041744368_wishlistadded.resx">
-      <DependentUpon>202008041744368_wishlistadded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008050838077_wishlistdeleteaddded.resx">
-      <DependentUpon>202008050838077_wishlistdeleteaddded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008050850262_userregisterchanged.resx">
-      <DependentUpon>202008050850262_userregisterchanged.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008050926541_myloginandregisteradded.resx">
-      <DependentUpon>202008050926541_myloginandregisteradded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008050945434_loginregisterupdated.resx">
-      <DependentUpon>202008050945434_loginregisterupdated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008050947218_dbcontextakaunt.resx">
-      <DependentUpon>202008050947218_dbcontextakaunt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008050955468_ApplicationDbContextchanged.resx">
-      <DependentUpon>202008050955468_ApplicationDbContextchanged.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008051017114_korisnikstouseraccoutns.resx">
-      <DependentUpon>202008051017114_korisnikstouseraccoutns.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008051030520_registerloginupdated.resx">
-      <DependentUpon>202008051030520_registerloginupdated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008051338257_korisnikID.resx">
-      <DependentUpon>202008051338257_korisnikID.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008051457318_userdatabasecreated.resx">
-      <DependentUpon>202008051457318_userdatabasecreated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008091304443_korisnikgamesintovirtual.resx">
-      <DependentUpon>202008091304443_korisnikgamesintovirtual.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008091525289_loginregisterpartialviewfixed.resx">
-      <DependentUpon>202008091525289_loginregisterpartialviewfixed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008091928017_IsAdmininkorisnikadded.resx">
-      <DependentUpon>202008091928017_IsAdmininkorisnikadded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008092013020_isadminviewbag.resx">
-      <DependentUpon>202008092013020_isadminviewbag.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008092025443_tagsadded1.resx">
-      <DependentUpon>202008092025443_tagsadded1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008092044225_tagsupdated.resx">
-      <DependentUpon>202008092044225_tagsupdated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008131350288_imageupload.resx">
-      <DependentUpon>202008131350288_imageupload.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008131356208_revertimageupload.resx">
-      <DependentUpon>202008131356208_revertimageupload.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008131529448_addgametouserlistadded.resx">
-      <DependentUpon>202008131529448_addgametouserlistadded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008151030333_addtocartaddded.resx">
-      <DependentUpon>202008151030333_addtocartaddded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008151321072_addtocartworking.resx">
-      <DependentUpon>202008151321072_addtocartworking.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008161537125_addtowishlistfinished.resx">
+      <DependentUpon>202008161537125_addtowishlistfinished.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

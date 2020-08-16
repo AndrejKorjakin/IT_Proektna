@@ -10,13 +10,14 @@
         body {
             background: -webkit-radial-gradient( #0b2a3c, #1b4456);
         }
+
         .pozadina-index {
             background: -webkit-radial-gradient( #283f63, #1b4456);
         }
     </style>
-    <h2>a</h2>
-    </head>
 
+</head>
+<br />
 <body>
 
     @if (Session["cart"] != null)
@@ -37,11 +38,11 @@
 
                         <div class="col mt-1">
                             <div class="card-block px-2">
-                                <h4 class="card-title ">@Html.ActionLink(item.game.Game_Name, "Details", new { id = item.Id }, new { @class = "text-warning" })</h4>
+                                <h4 class="card-title ">@Html.ActionLink(item.game.Game_Name, "Details", "Games", new { id = item.game.Id }, new { @class = "text-warning" })</h4>
 
                                 @if (item.game.Game_Cena == 0)
                                 {
-                                    <h5 class="card-text text-info font-weight-bold">Free To Play</h5>
+                                    <h5 class="card-text text-success font-weight-bold">Free To Play</h5>
                                 }
                                 else
                                 {
@@ -49,16 +50,10 @@
                                 }
 
 
-                                @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", null, new { id = item.Id }, new { @class = "btn btn-warning mt-2" })
+                                @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", "Games", new { gameid = item.game.Id, userid = Session["UserId"] }, new { @class = "btn btn-warning mt-2" })
+                                <a class="btn btn-link btn-danger js-delete mt-2 text-white" data-id="@item.game.Id">Remove From Cart</a>
 
 
-                                @*
-                                    @if (User.IsInRole("Administrator"))
-                                    {
-                                        <a>@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning mt-2" })</a>
-                                        <a>@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger mt-2" })</a>
-                                    }
-                                *@
 
 
 
@@ -86,39 +81,60 @@
             }
         }
         <span>@Html.ActionLink("Back To Shopping", "Index", "Games", null, new { @class = "btn btn-info text-white  mt-2" })</span>
+        <span>@Html.ActionLink("Checkout", "Index", "Games", null, new { @class = "btn btn-success text-white ml-3 mt-2" })</span>
     }
     else
     {
         <div class="container">
-<div class="row">
-    <div class="col">
-        <br />
-        <br />
-        <br />
-        <h1 class="text-warning" style="padding-left:200px">SHOPPING CART EMPTY</h1>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-    </div>
-</div>
+            <div class="row">
+                <div class="col">
+                    <br />
+                    <br />
+                    <br />
+                    <h1 class="text-warning" style="padding-left:200px">SHOPPING CART EMPTY</h1>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </div>
+            </div>
         </div>
     }
 </body>
-    
+
+@section scripts {
+    <script>
+        $(".js-delete").click(function () {
+            var button = $(this);
+
+            bootbox.confirm("Are you sure?", function (result) {
+                if (result) {
+                    $.ajax({
+                        method: "GET",
+                        url: "/ShoppingCarts/RemoveFromCart/" + button.attr("data-id"),
+                        success: function () {
+                            button.parent().parent().parent().parent().remove();
+                        }
+                    })
+                }
+            })
+        })
+    </script>
+
+}  

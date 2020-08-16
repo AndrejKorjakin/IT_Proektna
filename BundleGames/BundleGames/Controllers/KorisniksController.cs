@@ -39,12 +39,13 @@ namespace BundleGames.Controllers
 
         public ActionResult ProfileShow(int? id)
         {
+            var korisnik = db.Korisniks.Find(id);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }else 
             {
-                Korisnik korisnik = db.Korisniks.Where(c => c.Id == id).FirstOrDefault();
+                
                 if (korisnik == null)
                 {
                     return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -136,7 +137,7 @@ namespace BundleGames.Controllers
             //Treba da se izbrishe igrata od wishlist na korisnikot
             Game game = new Game();
             game.Id = 8;
-            db.Korisniks.Find(1).Korisnik_Wishlist.Wishlist_Games.Remove(game);
+            
             
             db.SaveChanges();
             return RedirectToAction("Index");

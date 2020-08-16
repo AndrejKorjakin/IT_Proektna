@@ -28,8 +28,8 @@
                             <h5 class="text-warning mt-3">
                                 Price: @if (Model.Game_Cena == 0)
                                 {
-                                    <label class="card-text text-dark">
-                                        Free
+                                    <label class="card-text text-success">
+                                        Free To Play
                                     </label>
                                 }
                                 else
@@ -50,10 +50,10 @@
                             <h5 class="text-warning mt-3">Release Date:</h5>
                             <p class="card-text font-weight-bold ml-2">@Html.DisplayFor(model => model.Release_Date)</p>
                         </div>
-                        @Html.ActionLink("Add To Card", "Index", "ShoppingCarts", null, new { @class = " btn btn-success mt-2 " })
+                        @Html.ActionLink("Add To Cart", "OrderNow", "ShoppingCarts", new { id = Model.Id }, new { @class = " btn btn-success mt-2 " })
 
-                        @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", "Games",@*new { id = Model.Id }*@ null, new { @class = "btn btn-warning mt-2" })
-                    
+                        @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", new { gameid = Model.Id, userid = Session["UserId"] }, new { @class = "btn btn-warning mt-2" })
+
                     </div>
                     
                     <div class="card-footer">
@@ -85,9 +85,17 @@
 <div class="row">
     <div class="col mt-4 ml-3">
         <p>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn bg-dark btn-outline-success" })
+            @if (Session["Username"] != null)
+            {
+                if (Session["Username"].ToString() == "admin")
+
+                {
+
+                }
+            }
             
-            @Html.ActionLink("Back to List", "Index", null, new {@class= "btn bg-dark btn-outline-warning ml-3" })
+
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn bg-dark btn-outline-warning ml-3" })
         </p>
     </div>
 </div>

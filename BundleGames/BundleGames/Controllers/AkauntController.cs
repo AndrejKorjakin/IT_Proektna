@@ -76,8 +76,9 @@ namespace BundleGames.Controllers
                 }else
                 {
                     var usr = db.Korisniks.Single(u => u.Username == user.Username && u.Password == user.Password);
-                    Session["UserId"] = user.Id;
-                    Session["Username"] = user.Username.ToString();
+                    Session["UserId"] = usr.Id;
+                    Session["Username"] = usr.Username.ToString();
+                    
                     ViewBag.IsAdmin = user.IsAdmin;
                     return RedirectToAction("Index", "Games");
                 }

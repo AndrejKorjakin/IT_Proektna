@@ -1,0 +1,109 @@
+﻿@model BundleGames.Models.Korisnik
+@{
+    ViewBag.Title = "WishlistGames";
+}
+@using (Html.BeginForm("AddGameToWishList", "Korisniks"))
+{
+
+    <head>
+        <style>
+            body {
+                background: -webkit-radial-gradient( #0b2a3c, #1b4456);
+            }
+
+            .pozadina-index {
+                background: -webkit-radial-gradient( #283f63, #1b4456);
+            }
+        </style>
+    </head>
+    <h6>a</h6>
+    <br />
+    <br />
+    <br />
+
+    <h1 class="text-warning btn btn-outline-info">
+        <label>Welcome: @Session["Username"] </label>
+        <br />
+        <label>Your Wishllist games:</label>
+    </h1>
+
+}
+
+<body>
+
+    @if (Session["Username"] != null)
+    {
+
+
+        foreach (var item in Model.WishlistGames)
+        {
+
+            <div class="card mt-5 pozadina-index">
+                <div class="row mt-5 no-gutters mt-2">
+                    <div class="col-2">
+
+                        <img class="ml-1 mt-1" style="height:120px;width:180px;" src="@Html.DisplayFor(modelItem =>  item.Game.Game_Image)" />
+
+                    </div>
+
+                    <div class="col mt-1">
+                        <div class="card-block px-2">
+                            <h4 class="card-title ">@Html.ActionLink(item.Game.Game_Name, "Details", new { id = item.Game.Id }, new { @class = "text-warning" })</h4>
+
+                            @if (item.Game.Game_Cena == 0)
+                            {
+                                <h5 class="card-text text-info font-weight-bold">Free To Play</h5>
+                            }
+                            else
+                            {
+                                <h5 class="card-text text-success font-weight-bold">@item.Game.Game_Cena$</h5>
+                            }
+
+                            @Html.ActionLink("Add To Card", "Index", "ShoppingCarts", null, new { @class = " btn btn-success mt-2 " })
+                            @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", null, new { id = item.Game.Id }, new { @class = "btn btn-warning mt-2" })
+
+
+
+
+                            <a>@Html.ActionLink("Edit", "Edit", new { id = item.Game.Id }, new { @class = "btn btn-info mt-2" })</a>
+                            <a class="btn btn-link btn-danger js-delete mt-2 text-white" data-id="@item.Game.Id">Remove From List</a>
+
+
+                        </div>
+                    </div>
+
+                    <div class="card-footer w-100 text-muted bg-dark mt-3">
+
+                    </div>
+                </div>
+            </div>
+        }
+
+    }
+    else
+    {
+
+    }
+</body>
+
+@section scripts {
+    <script>
+        $(".js-delete").click(function () {
+            var button = $(this);
+
+            bootbox.confirm("Are you sure?", function (result) {
+                if (result) {
+                    $.ajax({
+                        method: "GET",
+                        url: "/Wishlists/Delete/" + button.attr("data-id"),
+                        success: function () {
+                            console.log(button);
+                            button.parent().parent().parent().parent().remove();
+                        }
+                    })
+                }
+            })
+        })
+    </script>
+
+}

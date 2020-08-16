@@ -62,6 +62,7 @@ namespace BundleGames.Controllers
                 
                 Session["cart"] = cart;
             }
+            
 
             return View("Cart");
 
@@ -76,10 +77,11 @@ namespace BundleGames.Controllers
             {
                 if (item.game.Id == id)
                     cart.Remove(item);
+                break;
             }
 
             Session["cart"] = cart;
-            return Redirect("Cart");
+            return new EmptyResult();
         }
 
         // GET: ShoppingCarts/Details/5
@@ -152,30 +154,7 @@ namespace BundleGames.Controllers
         }
 
         // GET: ShoppingCarts/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ShoppingCart shoppingCart = db.ShoppingCarts.Find(id);
-            if (shoppingCart == null)
-            {
-                return HttpNotFound();
-            }
-            return View(shoppingCart);
-        }
-
-        // POST: ShoppingCarts/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            ShoppingCart shoppingCart = db.ShoppingCarts.Find(id);
-            db.ShoppingCarts.Remove(shoppingCart);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        
 
         protected override void Dispose(bool disposing)
         {
