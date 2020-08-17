@@ -25,15 +25,17 @@ namespace BundleGames.Models
         [Required]
         [Display(Name ="Confirm Password")]
         public string ConfirmPassword { get; set; }
+        [Required]
         public string Image { get; set; }
         
         [Required]
         [Range(10,99)]
         public int Age { get; set; }
-        public int IsAdmin = 0;
-        public List<Game> Korisnik_Games { get; } = new List<Game>();
-
+        
+        public virtual ICollection<Game> Korisnik_Games { get; } = new List<Game>();
         public virtual ICollection<WishlistGame> WishlistGames { get; } = new List<WishlistGame>();
-     
+        public virtual ICollection<GameForBuying> GamesForBuying { get; } = new List<GameForBuying>();
+        public virtual ICollection<GamesInShoppingCart> GamesInShoppingCart { get; } = new List<GamesInShoppingCart>();
+
     }
 }

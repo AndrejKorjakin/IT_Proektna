@@ -37,18 +37,21 @@
                                 <li class="nav-item active ml-5">
                                     @Html.ActionLink("STORE", "Index", "Games", null, new { @class = " btn text-info  border-right ml-5" })
                                 </li>
+                                @*
                                 <li class="nav-item">
                                     @Html.ActionLink("WEEKLY SPECIAL", "Index", "PopustGames", null, new { @class = " btn text-info  border-right" })
                                 </li>
+                                *@
                                 <li class="nav-item">
-                                    @Html.ActionLink("PROFILE", "ProfileShow", "Korisniks", new { id = Session["UserId"] }, new { @class = " btn text-info  border-right" })
+                                    @Html.ActionLink("PROFILE", "ProfileShow","Games", new { id = Session["UserId"] }, new { @class = " btn text-info  border-right" })
+                                </li>
+                                <li class="nav-item">
+                                    @Html.ActionLink("WISHLIST", "WishListView", "Games", new { id = Session["UserId"] }, new { @class = " btn text-info border-right" })
                                 </li>
                                 <li class="nav-item">
                                     @Html.ActionLink("CONTACT", "Contact", "Home", null, new { @class = " btn text-info border-right" })
                                 </li>
-                                <li class="nav-item">
-                                    @Html.ActionLink("WISHLIST", "AddGameToWishlist", null, new { @class = " btn text-info border-right" })
-                                </li>
+
                                 @if (Session["Username"] != null)
                                 {
                                     if (Session["Username"].ToString() == "admin")
@@ -96,7 +99,7 @@
                 <div class="row ml-5">
                     <div class="col ml-5">
                         <span class="m-lg-3"></span><span class="m-lg-5"></span><a href="@Url.Content("~")"><img class="ml-5" width="100" height="40" src="~/Logo/BundleGamesLogo.png" /></a>
-                        <label class="text-info">© 2020 Copyright </label> <a href="@Url.Content("~")" class="footer-copyright  py-3 text-warning">BundleGames </a>
+                        <label class="text-info">© 2020 Copyright </label> <a href="@Url.Content("~")" class="footer-copyright  py-3 text-warning">BandleGames </a>
                     </div>
                 </div>
             </div>

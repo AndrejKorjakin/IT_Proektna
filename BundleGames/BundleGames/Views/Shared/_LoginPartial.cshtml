@@ -11,11 +11,11 @@
         <img class="mr-3" style="width:45px;height:45px;" src="~/Logo/Cart.png" />
    
         
-        @Html.ActionLink("Shopping Cart", "OrderNow", "ShoppingCarts", null, htmlAttributes: new {  @class = "btn btn-outline-success mr-4" })
+        @Html.ActionLink("Shopping Cart", "Cart", "Games", null, htmlAttributes: new {  @class = "btn btn-outline-success mr-4" })
     </li>
 
     <li class="nav-item">
-        <button class="btn btn-outline-info mt-1">@Session["Username"]</button>
+        @Html.ActionLink(Session["Username"].ToString(), "ProfileShow", "Games", new { id = Session["UserId"] }, new { @class = " btn btn-outline-info mt-1" })
     </li>
     <li class="nav-item">
         @Html.ActionLink("Log Out", "LogOut", "Akaunt", null, new { @class = "btn btn-outline-danger ml-3 mt-1" })

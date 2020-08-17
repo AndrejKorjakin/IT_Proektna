@@ -21,38 +21,47 @@
                         <h5 class="card-title text-dark">@Html.DisplayFor(model => model.Game_Name)</h5>
                         <img src="@Html.DisplayFor(model=>model.Game_Image)" class="card-img-bottom">
                         <div class="border mt-1">
-                            <h5 class="text-warning mt-3">Description:</h5>
-                            <p class="card-text">@Html.DisplayFor(model => model.Game_Info)</p>
+                            <h5 class="text-warning mt-3 ml-2">Description:</h5>
+                            <p class="card-text ml-2">@Html.DisplayFor(model => model.Game_Info)</p>
                         </div>
                         <div class="border mt-2">
-                            <h5 class="text-warning mt-3">
+                            <h5 class="text-warning mt-3 ml-2">
                                 Price: @if (Model.Game_Cena == 0)
                                 {
-                                    <label class="card-text text-success">
+                                    <label class="card-text text-success ml-1">
                                         Free To Play
                                     </label>
                                 }
                                 else
                                 {
-                                    <label class="card-text text-dark">@Html.DisplayFor(model => model.Game_Cena)$</label>
+                                    <label class="card-text text-dark ml-1 ml-1">@Html.DisplayFor(model => model.Game_Cena)$</label>
                                 }
                             </h5>
                         </div>
                         <div class="border mt-1">
-                            <h5 class="text-warning mt-3">Developer:</h5>
+                            <h5 class="text-warning mt-3 ml-2">Developer:</h5>
                             <p class="card-text font-weight-bold ml-2">@Html.DisplayFor(model => model.Developer)</p>
                         </div>
                         <div class="border mt-1">
-                            <h5 class="text-warning mt-3">Publisher:</h5>
+                            <h5 class="text-warning mt-3 ml-2">Publisher:</h5>
                             <p class="card-text font-weight-bold ml-2">@Html.DisplayFor(model => model.Publisher)</p>
                         </div>
                         <div class="border mt-1">
-                            <h5 class="text-warning mt-3">Release Date:</h5>
+                            <h5 class="text-warning mt-3 ml-2">Release Date:</h5>
                             <p class="card-text font-weight-bold ml-2">@Html.DisplayFor(model => model.Release_Date)</p>
                         </div>
-                        @Html.ActionLink("Add To Cart", "OrderNow", "ShoppingCarts", new { id = Model.Id }, new { @class = " btn btn-success mt-2 " })
+                        @if (Session["Username"] != null)
+                        {
+                            if (Session["Username"].ToString() != "admin")
 
-                        @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", new { gameid = Model.Id, userid = Session["UserId"] }, new { @class = "btn btn-warning mt-2" })
+                            {
+
+                                @Html.ActionLink("Add To Cart", "Cart", new { gameid = Model.Id, userid = Session["UserId"] }, new { @class = " btn btn-success mt-2 mr-3 " })
+
+                                @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", new { gameid = Model.Id, userid = Session["UserId"] }, new { @class = "btn btn-warning mt-2" })
+                            }
+                        }
+                        
 
                     </div>
                     
@@ -62,16 +71,16 @@
                         </p>
                         <label class="text-info font-weight-bold">MINIMUM</label>:
                         <p class="border">
-                            <b><label class="text-danger">OS</label></b>: Windows 7/8.1/10 (64-bit versions)<br />
-                            <b><label class="text-danger">Processor</label></b>: Intel Core i5-6600k 3.5 GHz /AMD Ryzen 3 1300X 3.5 GHz or equivalent
+                            <b><label class="text-danger ml-2">OS</label></b>: Windows 7/8.1/10 (64-bit versions)<br />
+                            <b><label class="text-danger ml-2">Processor</label></b>: Intel Core i5-6600k 3.5 GHz /AMD Ryzen 3 1300X 3.5 GHz or equivalent
                             <br />
-                            <b><label class="text-danger">Memory</label></b>: 8 GB RAM
+                            <b><label class="text-danger ml-2">Memory</label></b>: 8 GB RAM
                             <br />
-                            <b><label class="text-danger">Graphics</label></b>: NVIDIA GTX 780 3GB /AMD Radeon R9 285 2GB or equivalent
+                            <b><label class="text-danger ml-2">Graphics</label></b>: NVIDIA GTX 780 3GB /AMD Radeon R9 285 2GB or equivalent
                             <br />
-                            <b><label class="text-danger">Network</label></b>: Broadband Internet connection
+                            <b><label class="text-danger ml-2">Network</label></b>: Broadband Internet connection
                             <br />
-                            <b><label class="text-danger">Storage</label></b>: 80 GB available space
+                            <b><label class="text-danger ml-2">Storage</label></b>: 80 GB available space
                         </p>      
                             
                         
@@ -85,18 +94,20 @@
 <div class="row">
     <div class="col mt-4 ml-3">
         <p>
+
+
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn bg-dark btn-outline-warning" })
             @if (Session["Username"] != null)
             {
                 if (Session["Username"].ToString() == "admin")
 
                 {
+                    <a>@Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-info ml-3" })</a>
 
                 }
             }
-            
-
-            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn bg-dark btn-outline-warning ml-3" })
         </p>
     </div>
 </div>
+<br />
 

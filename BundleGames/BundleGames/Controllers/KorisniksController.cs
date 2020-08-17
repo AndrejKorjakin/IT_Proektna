@@ -26,23 +26,14 @@ namespace BundleGames.Controllers
             return View(db.Korisniks.ToList());
         }
 
-        public ActionResult MakeAdmin(int? id)
-        {
-            if (id != null)
-            {
-                db.Korisniks.Find(id).IsAdmin = 1;
-                return View();
-            }
-            else
-                return new HttpStatusCodeResult(HttpStatusCode.NotFound);
-        }
-
+      
+        /*
         public ActionResult ProfileShow(int? id)
         {
             var korisnik = db.Korisniks.Find(id);
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return View("ProfileShow");
             }else 
             {
                 
@@ -54,16 +45,11 @@ namespace BundleGames.Controllers
                     ViewBag.Username = korisnik.Username;
                     
                     return View(korisnik);
-                }
-                
+                }   
             }
-            
+        }*/
 
 
-            
-        }
-
-        
         // GET: Korisniks/Details/5
         public ActionResult Details(int? id)
         {
@@ -122,12 +108,13 @@ namespace BundleGames.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Korisnik_Name,Username,Password,Image,Age")] Korisnik korisnik)
+        public ActionResult Edit([Bind(Include = "Id,Email,Korisnik_Name,Username,Password,ConfirmPassword,Image,Age")] Korisnik korisnik)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(korisnik).State = EntityState.Modified;
                 db.SaveChanges();
+                Session["Username"] = korisnik.Username;
                 return RedirectToAction("Index");
             }
             return View(korisnik);

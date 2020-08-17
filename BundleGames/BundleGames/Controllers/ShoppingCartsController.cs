@@ -26,6 +26,10 @@ namespace BundleGames.Controllers
 
             return View();
         }
+
+        
+
+        /*
         private int isExisting(int? id)
         {
             List<Item> cart = (List<Item>)Session["cart"];
@@ -40,6 +44,7 @@ namespace BundleGames.Controllers
             return -1;
         }
 
+        
         public ActionResult OrderNow(int? id)
         {
 
@@ -52,6 +57,7 @@ namespace BundleGames.Controllers
                 List<Item> cart = new List<Item>();
                 cart.Add(new Item(db.Games.Find(id)));
                 Session["cart"] = cart;
+                return View(cart);
             }
             else
             {
@@ -61,12 +67,11 @@ namespace BundleGames.Controllers
                 cart.Add(new Item(db.Games.Find(id)));
                 
                 Session["cart"] = cart;
+                return View("Cart");
             }
             
-
-            return View("Cart");
-
-            
+           
+        
         }
 
         public ActionResult RemoveFromCart(int? id)
@@ -83,6 +88,7 @@ namespace BundleGames.Controllers
             Session["cart"] = cart;
             return new EmptyResult();
         }
+         */
 
         // GET: ShoppingCarts/Details/5
         public ActionResult Details(int? id)
@@ -154,7 +160,15 @@ namespace BundleGames.Controllers
         }
 
         // GET: ShoppingCarts/Delete/5
-        
+        public ActionResult Delete(int? id)
+        {
+
+            var userid = int.Parse(Session["UserId"].ToString());
+            GamesInShoppingCart wlgame = db.GamesInShoppingCarts.FirstOrDefault(x => x.GameId == id && x.KorisnikId == userid);
+            db.GamesInShoppingCarts.Remove(wlgame);
+            db.SaveChanges();
+            return new EmptyResult();
+        }
 
         protected override void Dispose(bool disposing)
         {

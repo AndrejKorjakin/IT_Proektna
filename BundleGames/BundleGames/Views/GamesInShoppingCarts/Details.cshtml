@@ -1,0 +1,34 @@
+﻿@model BundleGames.Models.GamesInShoppingCart
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GamesInShoppingCart</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Game.Game_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Game.Game_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Korisnik.Korisnik_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Korisnik.Korisnik_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

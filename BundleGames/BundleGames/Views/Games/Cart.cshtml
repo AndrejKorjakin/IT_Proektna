@@ -1,5 +1,5 @@
-﻿@using BundleGames.Controllers
-@model BundleGames.Models.ShoppingCart
+﻿@model BundleGames.Models.Korisnik
+
 @{
     ViewBag.Title = "Cart";
 }
@@ -18,45 +18,39 @@
 
 </head>
 <br />
+<br />
+<br />
 <body>
-
-    @if (Session["cart"] != null)
-    {
-
-
-        foreach (var item in (List<Item>)Session["cart"])
+    @if(Model.GamesInShoppingCart != null) {
+        var listofid = new List<int>();
+        foreach (var item in Model.GamesInShoppingCart)
         {
+            listofid.Add(item.Game.Id);
             {
 
                 <div class="card mt-5 pozadina-index">
                     <div class="row mt-5 no-gutters mt-2">
                         <div class="col-2">
 
-                            <img class="ml-1 mt-1" style="height:120px;width:180px;" src="@Html.DisplayFor(modelItem =>item.game.Game_Image  )" />
+                            <img class="ml-1 mt-1" style="height:120px;width:180px;" src="@Html.DisplayFor(modelItem =>item.Game.Game_Image)" />
 
                         </div>
 
                         <div class="col mt-1">
-                            <div class="card-block px-2">
-                                <h4 class="card-title ">@Html.ActionLink(item.game.Game_Name, "Details", "Games", new { id = item.game.Id }, new { @class = "text-warning" })</h4>
+                            <div class="card-block px-4">
+                                <h4 class="card-title ">@Html.ActionLink(item.Game.Game_Name, "Details", "Games", new { id = item.Game.Id }, new { @class = "text-warning" })</h4>
 
-                                @if (item.game.Game_Cena == 0)
+                                @if (item.Game.Game_Cena == 0)
                                 {
                                     <h5 class="card-text text-success font-weight-bold">Free To Play</h5>
                                 }
                                 else
                                 {
-                                    <h5 class="card-text text-success font-weight-bold">@item.game.Game_Cena$</h5>
+                                    <h5 class="card-text text-success font-weight-bold">@item.Game.Game_Cena$</h5>
                                 }
 
-
-                                @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", "Games", new { gameid = item.game.Id, userid = Session["UserId"] }, new { @class = "btn btn-warning mt-2" })
-                                <a class="btn btn-link btn-danger js-delete mt-2 text-white" data-id="@item.game.Id">Remove From Cart</a>
-
-
-
-
-
+                                <span>@Html.ActionLink("Checkout", "CheckOut", "Games", new { gameid = item.Game.Id, userid = Session["UserId"] }, new { @class = "btn btn-success text-white mt-2" });</span>
+                                <a class="btn btn-link btn-danger js-delete mt-2 text-white" data-id="@item.Game.Id">Remove From Cart</a>
 
                             </div>
                         </div>
@@ -81,7 +75,7 @@
             }
         }
         <span>@Html.ActionLink("Back To Shopping", "Index", "Games", null, new { @class = "btn btn-info text-white  mt-2" })</span>
-        <span>@Html.ActionLink("Checkout", "Index", "Games", null, new { @class = "btn btn-success text-white ml-3 mt-2" })</span>
+        
     }
     else
     {
@@ -116,6 +110,8 @@
             </div>
         </div>
     }
+    <br />
+    <br />
 </body>
 
 @section scripts {
@@ -127,7 +123,7 @@
                 if (result) {
                     $.ajax({
                         method: "GET",
-                        url: "/ShoppingCarts/RemoveFromCart/" + button.attr("data-id"),
+                        url: "/ShoppingCarts/Delete/" + button.attr("data-id"),
                         success: function () {
                             button.parent().parent().parent().parent().remove();
                         }
@@ -135,6 +131,11 @@
                 }
             })
         })
+
+        
+            
+
+        
     </script>
 
 }  

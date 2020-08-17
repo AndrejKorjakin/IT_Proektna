@@ -12,12 +12,7 @@ namespace BundleGames.Models
         public int UserId { get; set; }
         public int GameId { get; set; }
 
-        public List<Game> GamesForBuying { get; set; }
-
-        public ShoppingCart()
-        {
-            GamesForBuying = new List<Game>();
-        }
+       
 
         
 

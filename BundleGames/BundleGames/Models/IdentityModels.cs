@@ -43,5 +43,7 @@ namespace BundleGames.Models
         public System.Data.Entity.DbSet<BundleGames.Models.ShoppingCart> ShoppingCarts { get; set; }
 
         public System.Data.Entity.DbSet<BundleGames.Models.Store> Stores { get; set; }
+
+        public System.Data.Entity.DbSet<BundleGames.Models.GamesInShoppingCart> GamesInShoppingCarts { get; set; }
     }
 }

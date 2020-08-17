@@ -8,14 +8,18 @@ namespace BundleGames.Models
     public class PopustGames
     {
         public int Id { get; set; }
-
-        public List<Game> PopustGamesList {get;set;}
-        public float NovaCena { get; set; }
-        public int PopustGame { get; set; }
+        public virtual Game Game { get; set; }
+        public int GameId { get; set; }
+        public int KorisnikId { get; set; }
+        public Korisnik Korisnik { get; set; }
 
         public PopustGames()
         {
-            PopustGamesList = new List<Game>();
+
+        }
+        public PopustGames(int korisnik_Id)
+        {
+            KorisnikId = korisnik_Id;
         }
     }
 }

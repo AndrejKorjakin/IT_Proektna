@@ -1,0 +1,131 @@
+﻿
+@model BundleGames.Models.Korisnik
+@{
+    ViewBag.Title = "ProfileShow";
+}
+@using (Html.BeginForm("ProfileShow", "Korisniks"))
+{
+
+    <head>
+        <style>
+            body {
+                background: -webkit-radial-gradient( #0b2a3c, #1b4456);
+            }
+
+            .pozadina-index {
+                background: -webkit-radial-gradient( #283f63, #1b4456);
+            }
+        </style>
+    </head>
+    if (Session["Username"] != null)
+    {
+        <br />
+        <h1 class="mt-5"></h1>
+        <h1 class="text-warning btn btn-outline-info mt-5">
+            <label class="text-warning">Welcome:</label> <label class="text-success"> @Session["Username"] </label>
+            <br />
+            <img style="height:50px;width:50px" src="@Session["UserImage"]" />
+            <br />
+
+            @Html.ActionLink("Edit Profile", "Edit", "Korisniks", new { id = @Session["UserId"] }, new { @class = "btn btn-outline-warning mt-2" })
+
+        </h1>
+    }
+
+
+}
+
+<body>
+
+    @if (Session["Username"] != null)
+    {
+
+        if (Model.GamesForBuying != null)
+        {
+            foreach (var item in Model.GamesForBuying)
+            {
+
+                <div class="card mt-5 pozadina-index">
+                    <div class="row mt-3 no-gutters ">
+                        <div class="col-2">
+
+                            <img class="ml-1 mt-1" style="height:120px;width:180px;" src="@Html.DisplayFor(modelItem =>  item.Game.Game_Image)" />
+
+                        </div>
+
+                        <div class="col mt-1">
+                            <div class="card-block px-4">
+                                <h4 class="card-title ">@Html.ActionLink(item.Game.Game_Name, "Details", new { id = item.Game.Id }, new { @class = "text-warning" })</h4>
+
+                                @if (item.Game.Game_Cena == 0)
+                                {
+                                    <h5 class="card-text text-info font-weight-bold">Free To Play</h5>
+                                }
+                                else
+                                {
+                                    <h5 class="card-text text-success font-weight-bold">@item.Game.Game_Cena$</h5>
+                                }
+                                <button class="playbutton btn btn-success mt-2">Play!</button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="card-footer w-100 text-muted bg-dark mt-3">
+                            <label>
+                                <span class="text-info">TAGS </span>
+                                <span class="btn-sm btn-primary">Adventure</span>
+                                <span class="btn-sm btn-primary">Action</span>
+                                <span class="btn-sm btn-primary">First-Person</span>
+                                <span class="btn-sm btn-primary">MOBA</span>
+                                <span class="btn-sm btn-primary">Shooting</span>
+                                <span class="btn-sm btn-primary">Indie</span>
+
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+            }
+
+        }
+        else if(Model.GamesForBuying == null)
+        {
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        }
+    
+    }else
+    
+    {
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br>
+    <h1 class="btn btn-lg btn-outline-danger">Oops... Looks like someone doesn't have a profile set up yet?.</h1>
+    @Html.ActionLink("Create a FREE account!", "Register", "Akaunt", null, new { @class = "btn btn-lg btn-outline-success mb-2 ml-5 " })
+    <h1 class="btn btn-lg btn-outline-danger">Oops... Looks like you haven't logged in yet.</h1>
+    <span class="ml-5"></span><span class="ml-5"></span> <span class="ml-5"></span><span class="ml-2"></span>
+    @Html.ActionLink("             " + "Log In   " + "              ", "Login", "Akaunt", null, new { @class = "btn btn-lg btn-outline-warning mb-2 ml-5 " })
+
+    }
+    <br />
+    <br />
+</body>
+@section scripts {
+    <script>
+
+        $(".playbutton").on("click", function () {
+            alert('Downloading the game....');
+            alert('Installing the game....');
+            alert('Starting the game....');
+            alert('Exiting the game....');
+        });
+    </script>
+
+}

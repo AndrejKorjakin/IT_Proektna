@@ -185,6 +185,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AkauntController.cs" />
     <Compile Include="Controllers\GamesController.cs" />
+    <Compile Include="Controllers\GamesInShoppingCartsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KorisniksController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -203,9 +204,43 @@
     <Compile Include="Migrations\202008161537125_addtowishlistfinished.Designer.cs">
       <DependentUpon>202008161537125_addtowishlistfinished.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008161732324_checkoutadded.cs" />
+    <Compile Include="Migrations\202008161732324_checkoutadded.Designer.cs">
+      <DependentUpon>202008161732324_checkoutadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008161803354_checkoutupdated.cs" />
+    <Compile Include="Migrations\202008161803354_checkoutupdated.Designer.cs">
+      <DependentUpon>202008161803354_checkoutupdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008171543198_addgametocardmodeladded.cs" />
+    <Compile Include="Migrations\202008171543198_addgametocardmodeladded.Designer.cs">
+      <DependentUpon>202008171543198_addgametocardmodeladded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008171601327_deletefromcartchanged.cs" />
+    <Compile Include="Migrations\202008171601327_deletefromcartchanged.Designer.cs">
+      <DependentUpon>202008171601327_deletefromcartchanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008171606237_deletefromcartchanged1.cs" />
+    <Compile Include="Migrations\202008171606237_deletefromcartchanged1.Designer.cs">
+      <DependentUpon>202008171606237_deletefromcartchanged1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008171750148_popustgameschanged.cs" />
+    <Compile Include="Migrations\202008171750148_popustgameschanged.Designer.cs">
+      <DependentUpon>202008171750148_popustgameschanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008172037325_allkorisniksdeleted.cs" />
+    <Compile Include="Migrations\202008172037325_allkorisniksdeleted.Designer.cs">
+      <DependentUpon>202008172037325_allkorisniksdeleted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008172144286_lastmigration.cs" />
+    <Compile Include="Migrations\202008172144286_lastmigration.Designer.cs">
+      <DependentUpon>202008172144286_lastmigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\GamesInShoppingCart.cs" />
     <Compile Include="Models\AddToWishListModel.cs" />
+    <Compile Include="Models\GameForBuying.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Controllers\Item.cs" />
     <Compile Include="Models\Korisnik.cs" />
@@ -649,14 +684,21 @@
     <Content Include="Views\Stores\Details.cshtml" />
     <Content Include="Views\Stores\Edit.cshtml" />
     <Content Include="Views\Stores\Index.cshtml" />
-    <Content Include="Views\Korisniks\ProfileShow.cshtml" />
+    <Content Include="Views\Games\ProfileShow.cshtml" />
     <Content Include="Views\Korisniks\Wishlist.cshtml" />
     <Content Include="Views\Akaunt\LoggedIn.cshtml" />
     <Content Include="Views\Akaunt\Register.cshtml" />
     <Content Include="Views\Akaunt\Login.cshtml" />
-    <Content Include="Views\ShoppingCarts\Cart.cshtml" />
+    <Content Include="Views\Games\Cart.cshtml" />
     <Content Include="Views\ShoppingCarts\Empty.cshtml" />
     <Content Include="Views\Games\WishListView.cshtml" />
+    <Content Include="Views\Games\BoughtGames.cshtml" />
+    <Content Include="Views\Games\CheckOut.cshtml" />
+    <Content Include="Views\GamesInShoppingCarts\Create.cshtml" />
+    <Content Include="Views\GamesInShoppingCarts\Delete.cshtml" />
+    <Content Include="Views\GamesInShoppingCarts\Details.cshtml" />
+    <Content Include="Views\GamesInShoppingCarts\Edit.cshtml" />
+    <Content Include="Views\GamesInShoppingCarts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -676,6 +718,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008161537125_addtowishlistfinished.resx">
       <DependentUpon>202008161537125_addtowishlistfinished.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008161732324_checkoutadded.resx">
+      <DependentUpon>202008161732324_checkoutadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008161803354_checkoutupdated.resx">
+      <DependentUpon>202008161803354_checkoutupdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008171543198_addgametocardmodeladded.resx">
+      <DependentUpon>202008171543198_addgametocardmodeladded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008171601327_deletefromcartchanged.resx">
+      <DependentUpon>202008171601327_deletefromcartchanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008171606237_deletefromcartchanged1.resx">
+      <DependentUpon>202008171606237_deletefromcartchanged1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008171750148_popustgameschanged.resx">
+      <DependentUpon>202008171750148_popustgameschanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008172037325_allkorisniksdeleted.resx">
+      <DependentUpon>202008172037325_allkorisniksdeleted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008172144286_lastmigration.resx">
+      <DependentUpon>202008172144286_lastmigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -17,32 +17,75 @@ namespace BundleGames.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        
+
 
         // GET: Games
         public ActionResult Index()
         {
-            
-             return View(db.Games.ToList());
+
+            return View(db.Games.ToList());
         }
-        public ActionResult WishListView()
-        {
-            return View();
-        }
+        
         public ActionResult ProfileShow(int? id)
         {
+            if (id == null)
+            {
+                return View("ProfileShow");
+            }
             var user = db.Korisniks.FirstOrDefault(k => k.Id == id);
-            return View(user.Korisnik_Games.ToList());
+            return View(user);
+
+        }
+        public ActionResult WishListView(int? id)
+        {
+            if (id == null)
+            {
+                return View("WishListView");
+            }
+            var user = db.Korisniks.FirstOrDefault(k => k.Id == id);
+            return View(user);
+
+        }
+        
+        public ActionResult Cart(int? gameid, int? userid)
+        {
+            if (gameid == null || userid == null)
+            {
+                
+                var UserId = int.Parse(Session["UserId"].ToString());
+                return View(db.Korisniks.Find(UserId));
+            }
+            var user = db.Korisniks.Find(userid);
+            var game = db.Games.Find(gameid);
+            if (!user.GamesInShoppingCart.Any(x => x.GameId == gameid))
+            {
+                var wishlistgame = new GamesInShoppingCart()
+                {
+                    KorisnikId = (int)userid,
+                    GameId = (int)gameid,
+                    Game = game
+                };
+                user.GamesInShoppingCart.Add(wishlistgame);
+                db.SaveChanges();
+            }
+
+            return View(user);
 
         }
 
         public ActionResult AddGameToWishlist(int? gameid, int? userid)
         {
-            if(gameid == null || userid == null)
+            if (gameid == null || userid == null)
             {
+                if (userid == null)
+                {
+                    return View("WishListView");
+                }
                 var UserId = int.Parse(Session["UserId"].ToString());
-                return View(db.Korisniks.Find(UserId));
+                var user1 = db.Korisniks.Find(UserId);
+                return View(user1);
             }
+
             var user = db.Korisniks.Find(userid);
             var game = db.Games.Find(gameid);
             if (!user.WishlistGames.Any(x => x.GameId == gameid))
@@ -56,48 +99,43 @@ namespace BundleGames.Controllers
                 db.SaveChanges();
             }
             return View(user);
-
-
         }
 
-        /* 
-        
-        public ActionResult AddGameToWishlist(int gameid, int userid)
-        {
-            
-            AddToWishListModel model = new AddToWishListModel();
-            model.GameId = gameid;
-            model.KorisnikId = userid;
-            
-            
-            return View();
-                
-        }
-        [HttpPost]
-        public ActionResult AddGameToWishlist(AddToWishListModel model)
-        {
-            var user = db.Korisniks.FirstOrDefault(m=>m.Id == model.KorisnikId );
-            var game = db.Games.FirstOrDefault(z => z.Id == model.GameId);
-            user.Korisnik_Wishlist.Wishlist_Games.Add(game);
-            db.SaveChanges();
-            return View("ProfileShow");
-        }
-        */
 
-
-        public ActionResult CheckOut(int gameid, int userid)
+        public ActionResult CheckOut(int? gameid, int? userid)
         {
+            if (gameid == null || userid == null)
+            {
+                return View("ProfileShow");
+            }
+
             var user = db.Korisniks.Find(userid);
             var game = db.Games.Find(gameid);
+            if (!user.GamesForBuying.Any(x => x.GameId == gameid))
+            {
+                var wishlistgame = new GameForBuying()
+                {
+                    KorisnikId = (int)userid,
+                    GameId = (int)gameid,
+                    Game = game
 
-            db.SaveChanges();
-            return View();
+                };
+                user.GamesForBuying.Add(wishlistgame);
+
+                
+                GamesInShoppingCart wlgame = db.GamesInShoppingCarts.FirstOrDefault(x => x.GameId == gameid && x.KorisnikId == userid);
+                db.GamesInShoppingCarts.Remove(wlgame);
+                db.SaveChanges();
+                
+            }
+
+            return View(user);
+
         }
-            
 
-        
 
-        
+
+
 
         // GET: Games/Details/5
         public ActionResult Details(int? id)

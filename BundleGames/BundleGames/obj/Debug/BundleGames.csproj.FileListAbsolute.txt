@@ -109,3 +109,11 @@ F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\Bundl
 F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.pdb
 F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.csprojAssemblyReference.cache
 F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.addtowishlistfinished.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.checkoutadded.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.checkoutupdated.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.addgametocardmodeladded.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.deletefromcartchanged.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.deletefromcartchanged1.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.popustgameschanged.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.allkorisniksdeleted.resources
+F:\FAKULTET\Internet Tehnologii\PROEKTNA\BundleGames\BundleGames\obj\Debug\BundleGames.Migrations.lastmigration.resources

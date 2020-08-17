@@ -1,0 +1,116 @@
+﻿@model BundleGames.Models.Korisnik
+@{
+    ViewBag.Title = "BoughtGames";
+}
+@using (Html.BeginForm("BoughtGames", "Korisniks"))
+{
+
+    <head>
+        <style>
+            body {
+                background: -webkit-radial-gradient( #0b2a3c, #1b4456);
+            }
+
+            .pozadina-index {
+                background: -webkit-radial-gradient( #283f63, #1b4456);
+            }
+        </style>
+    </head>
+    <h6>a</h6>
+    <br />
+    <br />
+    <br />
+
+    <h1 class="text-warning btn btn-outline-info">
+        <label>Welcome: @Session["Username"] </label>
+        <br />
+        <label>Your Wishllist games:</label>
+    </h1>
+
+}
+
+<body>
+
+    @if (Session["Username"] != null)
+    {
+
+
+        foreach (var item in Model.GamesForBuying)
+        {
+
+            <div class="card mt-5 pozadina-index">
+                <div class="row mt-5 no-gutters mt-2">
+                    <div class="col-2">
+
+                        <img class="ml-1 mt-1" style="height:120px;width:180px;" src="@Html.DisplayFor(modelItem =>  item.Game.Game_Image)" />
+
+                    </div>
+
+                    <div class="col mt-1">
+                        <div class="card-block px-2">
+                            <h4 class="card-title ">@Html.ActionLink(item.Game.Game_Name, "Details", new { id = item.Game.Id }, new { @class = "text-warning" })</h4>
+
+                            @if (item.Game.Game_Cena == 0)
+                            {
+                                <h5 class="card-text text-info font-weight-bold">Free To Play</h5>
+                            }
+                            else
+                            {
+                                <h5 class="card-text text-success font-weight-bold">@item.Game.Game_Cena$</h5>
+                            }
+
+                            <button class="btn btn-outline-success">Play!</button>
+
+                            <a class="btn btn-link btn-danger js-delete mt-2 text-white" data-id="@item.Game.Id">Remove From List</a>
+
+
+                        </div>
+                    </div>
+
+                    <div class="card-footer w-100 text-muted bg-dark mt-3">
+                        <label>
+                            <span class="text-info">TAGS </span>
+                            <span class="btn-sm btn-primary">Adventure</span>
+                            <span class="btn-sm btn-primary">Action</span>
+                            <span class="btn-sm btn-primary">First-Person</span>
+                            <span class="btn-sm btn-primary">MOBA</span>
+                            <span class="btn-sm btn-primary">Shooting</span>
+                            <span class="btn-sm btn-primary">Indie</span>
+
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+        }
+
+    }
+    else
+    {
+
+    }
+    <br />
+    <br />
+</body>
+
+@section scripts {
+    <script>
+        $(".js-delete").click(function () {
+            var button = $(this);
+
+            bootbox.confirm("Are you sure?", function (result) {
+                if (result) {
+                    $.ajax({
+                        method: "GET",
+                        url: "/GameForBuying/Delete/" + button.attr("data-id"),
+                        success: function () {
+                            console.log(button);
+                            button.parent().parent().parent().parent().remove();
+                        }
+                    })
+                }
+            })
+        })
+    </script>
+
+}

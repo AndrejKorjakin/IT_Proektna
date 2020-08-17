@@ -48,8 +48,8 @@
                                     <h5 class="card-text text-success font-weight-bold">@item.game.Game_Cena$</h5>
                                 }
 
-                                @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", null, new { id = item.Id }, new { @class = "btn btn-warning mt-2" })
-                                <a class="btn btn-link btn-danger js-delete mt-2 text-white" data-id="@item.game.Id">Delete</a>
+                                
+                                <a class="btn btn-link btn-danger js-delete mt-2 text-white" data-id="@item.game.Id">Remove From Cart</a>
                                 @*
                                     @if (User.IsInRole("Administrator"))
                                     {
