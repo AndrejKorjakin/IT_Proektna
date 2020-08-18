@@ -21,7 +21,8 @@
 <br />
 <br />
 <body>
-    @if(Model.GamesInShoppingCart != null) {
+    @if (Model.GamesInShoppingCart != null)
+    {
         var listofid = new List<int>();
         foreach (var item in Model.GamesInShoppingCart)
         {
@@ -74,10 +75,11 @@
 
             }
         }
+        <br />
         <span>@Html.ActionLink("Back To Shopping", "Index", "Games", null, new { @class = "btn btn-info text-white  mt-2" })</span>
-        
+
     }
-    else
+    @if (Model.GamesInShoppingCart.Count <= 0)
     {
         <div class="container">
             <div class="row">
@@ -85,24 +87,14 @@
                     <br />
                     <br />
                     <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                     <h1 class="text-warning" style="padding-left:200px">SHOPPING CART EMPTY</h1>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
                     <br />
                     <br />
                     <br />
@@ -110,8 +102,9 @@
             </div>
         </div>
     }
-    <br />
-    <br />
+
+
+
 </body>
 
 @section scripts {
