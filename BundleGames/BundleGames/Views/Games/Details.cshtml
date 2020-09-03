@@ -55,13 +55,20 @@
                             if (Session["Username"].ToString() != "admin")
 
                             {
+                                if (DateTime.Now < Model.Release_Date)
+                                {
+                                    @Html.ActionLink("Pre-order", "Cart", new { gameid = Model.Id, userid = Session["UserId"] }, new { @class = "btn btn-success mt-2 mr-3" })
+                                }
+                                if (DateTime.Now >= Model.Release_Date)
+                                {
+                                    @Html.ActionLink("Add To Cart", "Cart", new { gameid = Model.Id, userid = Session["UserId"] }, new { @class = " btn btn-success mt-2 mr-3 " })
+                                }
 
-                                @Html.ActionLink("Add To Cart", "Cart", new { gameid = Model.Id, userid = Session["UserId"] }, new { @class = " btn btn-success mt-2 mr-3 " })
 
                                 @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", new { gameid = Model.Id, userid = Session["UserId"] }, new { @class = "btn btn-warning mt-2" })
                             }
                         }
-                        
+
 
                     </div>
                     

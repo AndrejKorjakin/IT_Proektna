@@ -49,7 +49,7 @@
                     <div class="row mt-3 no-gutters ">
                         <div class="col-2">
 
-                            <img class="ml-1 mt-1" style="height:120px;width:180px;" src="@Html.DisplayFor(modelItem =>  item.Game.Game_Image)" />
+                            <img class="ml-1 mt-1" style="height:120px;width:180px;" src="@Html.DisplayFor(modelItem => item.Game.Game_Image)" />
 
                         </div>
 
@@ -65,7 +65,14 @@
                                 {
                                     <h5 class="card-text text-success font-weight-bold">@item.Game.Game_Cena$</h5>
                                 }
-                                <button class="playbutton btn btn-success mt-2">Play!</button>
+                                @if (DateTime.Now < item.Game.Release_Date) { 
+
+                                        <button class="preorderplay btn btn-outline-danger mt-2">Game Not Released!</button>
+                                }
+                                @if(DateTime.Now >= item.Game.Release_Date){
+                                        <button class="playbutton btn btn-success mt-2">Play!</button>
+
+                                }
 
 
                             </div>
@@ -121,10 +128,16 @@
     <script>
 
         $(".playbutton").on("click", function () {
-            alert('Downloading the game....');
-            alert('Installing the game....');
-            alert('Starting the game....');
-            alert('Exiting the game....');
+            alert('Downloading the game...');
+            alert('Installing the game...');
+            alert('Starting the game...');
+            alert('Exiting the game...');
+        });
+
+        $(".preorderplay").on("click", function () {
+            alert('Game is still not released, wait till release date!...');
+            
+            
         });
     </script>
 

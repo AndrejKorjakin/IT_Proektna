@@ -211,10 +211,16 @@ namespace BundleGames.Controllers
         
         public ActionResult Delete(int id)
         {
-            Game game = db.Games.Find(id);
-            db.Games.Remove(game);
-            db.SaveChanges();
-            return new EmptyResult();
+            if (Session["Username"].ToString() == "admin")
+            {
+                Game game = db.Games.Find(id);
+                db.Games.Remove(game);
+                db.SaveChanges();
+                return new EmptyResult();
+
+            }
+            return new HttpNotFoundResult();
+
         }
 
         protected override void Dispose(bool disposing)

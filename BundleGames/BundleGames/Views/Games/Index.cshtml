@@ -51,25 +51,32 @@
                                 if (Session["Username"].ToString() != "admin")
 
                                 {
+                                    if (DateTime.Now < item.Release_Date)
+                                    {
+                                        @Html.ActionLink("Pre-order", "Cart", new { gameid = item.Id, userid = Session["UserId"] }, new { @class = "btn btn-success mt-2 mr-3" })
+                                    }
+                                    if (DateTime.Now >= item.Release_Date)
+                                    {
+                                        @Html.ActionLink("Add To Cart", "Cart", new { gameid = item.Id, userid = Session["UserId"] }, new { @class = "btn btn-success mt-2 mr-3" })
 
-                                    @Html.ActionLink("Add To Cart", "Cart", new { gameid = item.Id, userid = Session["UserId"] }, new { @class = "btn btn-success mt-2 mr-3" })
+                                    }
                                     @Html.ActionLink("Add To Wishlist", "AddGameToWishlist", new { gameid = item.Id, userid = Session["UserId"] }, new { @class = "btn btn-warning mt-2" })
                                 }
                             }
 
 
 
-                                @if (Session["Username"] != null)
-                                {
-                                    if (Session["Username"].ToString() == "admin")
+                            @if (Session["Username"] != null)
+                            {
+                                if (Session["Username"].ToString() == "admin")
 
-                                    {
-                                        <a>@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-info mt-2 mr-2" })</a>
-                                        <a class="btn btn-link btn-danger js-delete mt-2 mr-2 text-white" data-id="@item.Id">Delete</a>
-                                       // <a>@Html.ActionLink("Add To Weekly Special", "Index", "PopustGames", new { id = item.Id }, new { @class = "btn btn-secondary mt-2" })</a>
-                                    }
+                                {
+                                    <a>@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-info mt-2 mr-2" })</a>
+                                    <a class="btn btn-link btn-danger js-delete mt-2 mr-2 text-white" data-id="@item.Id">Delete</a>
+                                    // <a>@Html.ActionLink("Add To Weekly Special", "Index", "PopustGames", new { id = item.Id }, new { @class = "btn btn-secondary mt-2" })</a>
                                 }
-                            </div>
+                            }
+                        </div>
                     </div>
                     @*
                         <div class="card-footer w-100 text-muted bg-dark mt-3">
